@@ -33,12 +33,12 @@
 
         eq {
             bindings = <&kp EQUAL>;
-            key-positions = <16 28>;
+            key-positions = <8 7>;
         };
 
         ESCC {
             bindings = <&kp ESCAPE>;
-            key-positions = <1 2>;
+            key-positions = <1 0>;
         };
 
         ZZ {
@@ -53,7 +53,12 @@
 
         DELL {
             bindings = <&kp DELETE>;
-            key-positions = <9 8>;
+            key-positions = <8 9>;
+        };
+
+        del2 {
+            bindings = <&kp ESCAPE>;
+            key-positions = <1 2>;
         };
     };
 
@@ -111,10 +116,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE   &kp LC(LS(TAB))         &kp UP_ARROW    &kp LA(TAB)              &trans                       &trans  &trans  &trans  &trans  &trans
-&kp LA(TAB)  &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans       &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans       &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                          &trans
+&kp ESCAPE   &kp LC(LS(TAB))         &kp UP_ARROW    &kp LA(TAB)              &trans                       &kp ASTERISK  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH
+&kp LA(TAB)  &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &kp PLUS      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS
+&trans       &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD
+&trans       &trans                  &trans          &trans                   &trans   &trans      &trans  &kp NUMBER_0                                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
