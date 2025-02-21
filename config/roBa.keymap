@@ -21,8 +21,8 @@
             key-positions = <11 10>;
         };
 
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
+        alt_tab {
+            bindings = <&kp LA(TAB)>;
             key-positions = <11 12>;
         };
 
@@ -94,7 +94,7 @@
             bindings = <
 &kp Q             &kp W         &kp E      &kp R                  &kp T                                                   &kp Y        &kp U  &lt 5 I    &kp O    &kp P
 &kp A             &kp S         &kp D      &kp F                  &kp G        &kp LS(LG(S))               &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
-&mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                  &kp B        &kp COLON                   &kp PLUS       &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                  &kp B        &kp LEFT_BRACKET            &kp PLUS       &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LEFT_ALT      &kp LEFT_WIN  &kp LCTRL  &lt_to_layer_0 6 CAPS  &lt 2 SPACE  &lt_to_layer_0 3 SPACE      &kp BACKSPACE  &lt 1 ENTER                             &mt RIGHT_SHIFT DELETE
             >;
 
