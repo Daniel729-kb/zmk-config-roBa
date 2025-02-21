@@ -27,7 +27,7 @@
         };
 
         double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
+            bindings = <&kp ENTER>;
             key-positions = <20 21>;
         };
 
