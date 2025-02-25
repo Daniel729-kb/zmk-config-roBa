@@ -110,6 +110,14 @@
             tapping-term-ms = <200>;
         };
 
+        tog_off: toggle_layer_off_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
+
+        };
+
     };
 
     keymap {
