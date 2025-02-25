@@ -88,17 +88,17 @@
                 <&mkp LCLK>,
                 <&macro_tap>,
                 <&tog_off 4 &sl 4>;
+
             label = "MACRO_LEFT_CLICK";
         };
 
-   cmd_space: cmd_space {
-         compatible = "zmk,behavior-macro";
-         #binding-cells = <0>;
-         bindings = <&kp LG(SPACE)>;
-         label = "CMD_SPACE";
-
+        cmd_space: cmd_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE)>;
+            label = "CMD_SPACE";
+        };
     };
-};
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
@@ -115,9 +115,7 @@
             #binding-cells = <1>;
             display-name = "Toggle Layer Off";
             toggle-mode = "off";
-
         };
-
     };
 
     keymap {
@@ -165,10 +163,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans             &trans  &mo 5     &mkp MB2
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &macro_left_click  &mo 5   &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans             &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                       &trans
             >;
         };
 
