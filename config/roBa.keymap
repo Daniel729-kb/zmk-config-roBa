@@ -155,7 +155,7 @@
 &kp LS(LEFT_ALT)  &trans          &kp UP_ARROW    &trans           &trans                            &kp KP_DIVIDE    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS
 &kp LA(TAB)       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans      &kp KP_EQUAL  &kp KP_MULTIPLY  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS
 &trans            &trans          &trans          &trans           &trans  &trans      &kp KP_COMMA  &kp KP_DOT       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER
-&trans            &trans          &trans          &trans           &trans  &trans      &trans        &kp KP_NUMBER_0                                                     &to 3
+&trans            &trans          &trans          &trans           &trans  &trans      &trans        &kp KP_NUMBER_0                                                     &tog 3
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
