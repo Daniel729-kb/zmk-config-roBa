@@ -182,7 +182,7 @@
         layer_6 {
             bindings = <
 &kp LC(Q)  &kp LC(W)  &trans      &trans     &trans                                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans     &trans     &trans      &trans     &trans  &trans           &trans       &trans        &trans        &trans        &trans        &trans
+&kp LC(A)  &kp LC(S)  &trans      &trans     &trans  &trans           &trans       &trans        &trans        &trans        &trans        &trans
 &kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp LC(V)  &trans  &bootloader      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans     &trans     &cmd_space  &trans     &trans  &trans           &trans       &trans                                                  &bt BT_CLR_ALL
             >;
