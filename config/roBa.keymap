@@ -129,7 +129,7 @@
 &kp LEFT_ALT      &kp LCTRL  &kp LEFT_WIN  &lt_to_layer_0 6 ESCAPE  &lt 2 SPACE  &lt_to_layer_0 3 CAPS      &lt 2 SPACE    &lt 1 ENTER                             &mt RIGHT_SHIFT DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_AC_ZOOM_OUT C_AC_ZOOM_IN>;
         };
 
         FUNCTION {
