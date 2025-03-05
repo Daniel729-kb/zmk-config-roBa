@@ -129,7 +129,7 @@
 &kp LEFT_ALT      &kp LCTRL  &kp LEFT_WIN  &lt_to_layer_0 6 ESCAPE  &lt 2 SPACE  &lt_to_layer_0 3 CAPS      &lt 2 SPACE    &lt 1 ENTER                             &mt RIGHT_SHIFT DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_AC_ZOOM_OUT C_AC_ZOOM_IN>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         FUNCTION {
@@ -143,10 +143,10 @@
 
         NUM {
             bindings = <
-&kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                       &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8    &kp NUMBER_9          &kp NUMBER_0
-&kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT   &kp LESS_THAN         &kp COLON      &kp CARET         &kp AMPERSAND      &kp ASTERISK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp PLUS         &kp MINUS     &kp ASTERISK  &kp SLASH     &kp PERIOD    &kp GREATER_THAN      &kp SEMICOLON  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
-&trans           &trans        &cmd_space    &trans        &trans        &trans                &trans         &trans                                                                     &kp PIPE
+&kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                            &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8    &kp NUMBER_9          &kp NUMBER_0
+&kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT        &trans                &kp COLON      &kp CARET         &kp AMPERSAND      &kp ASTERISK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp PLUS         &kp MINUS     &kp ASTERISK  &kp SLASH     &kp LS(LESS_THAN)  &kp GREATER_THAN      &kp SEMICOLON  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
+&trans           &trans        &cmd_space    &trans        &trans             &trans                &trans         &trans                                                                     &kp PIPE
             >;
         };
 
