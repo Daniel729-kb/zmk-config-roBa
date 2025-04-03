@@ -6,6 +6,9 @@
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
+#define ZMK_MOUSE_POINTING_SCRL_VAL 100
+
+
 
 &mt {
     flavor = "balanced";
@@ -101,6 +104,13 @@
     };
 
     behaviors {
+
+scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+    compatible = "zmk,behavior-sensor-rotate";
+    #sensor-binding-cells = <0>;
+    bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+    tap-ms = <20>;
+}
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -129,7 +139,7 @@
 &kp LEFT_ALT      &kp LEFT_WIN  &kp LCTRL  &lt_to_layer_0 6 ESCAPE  &lt 2 SPACE  &lt_to_layer_0 3 CAPS      &lt 2 SPACE    &lt 1 ENTER                             &mt RIGHT_SHIFT DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         FUNCTION {
