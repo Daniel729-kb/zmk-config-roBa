@@ -169,7 +169,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                 &trans  &macro_left_click  &mkp MB3  &mo 5     &mkp MB2
 &trans  &trans  &trans  &trans  &trans  &trans                 &trans  &trans  &macro_left_click  &mo 5     &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                 &trans  &trans  &trans             &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans                 &trans  &trans  &mkp MB1           &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &mo 5   &macro_left_click      &trans  &trans                                         &trans
             >;
         };
