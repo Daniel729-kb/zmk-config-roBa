@@ -119,6 +119,7 @@
             bindings = <&msc>, <&msc>;
 
             tap-ms = <20>;
+            label = "AB";
         };
     };
 
