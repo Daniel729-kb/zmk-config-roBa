@@ -160,8 +160,6 @@
 &kp PLUS         &kp MINUS     &kp ASTERISK  &kp SLASH     &kp PERIOD    &kp EQUAL      &kp DOUBLE_QUOTES  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
 &trans           &trans        &cmd_space    &trans        &trans        &trans         &trans             &trans                                                                     &kp PIPE
             >;
-
-            sensor-bindings = <&mouse_scroll SCRL_LEFT SCRL_RIGHT>;
         };
 
         ARROW {
