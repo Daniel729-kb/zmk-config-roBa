@@ -36,8 +36,8 @@ layers:
   - .
   - /
   - LALT
-  - LCTRL
   - LEFT GUI
+  - LCTRL
   - {t: '&to_layer_0 ESCAPE', h: '6'}
   - {t: SPACE, h: '6'}
   - {t: '&to_layer_0 CAPS', h: ARROW}
