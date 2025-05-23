@@ -157,12 +157,13 @@
             };
         
         NUM {
-           bindings = 
-        &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                    &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8    &kp NUMBER_9          &kp NUMBER_0
-        &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT   &trans         &kp COLON          &kp CARET         &kp AMPERSAND      &kp ASTERISK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-        &kp PLUS         &kp MINUS     &kp ASTERISK  &kp SLASH     &kp PERIOD    &kp EQUAL      &kp DOUBLE_QUOTES  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
-        &trans           &trans        &cmd_space    &trans        &trans        &trans         &trans             &trans                                                                     &kp PIPE
-         >;
+            bindings = <
+        &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  
+        &kp NUMBER_6     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+        &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT
+        &kp CARET        &kp AMPERSAND &kp ASTERISK  &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS
+        &kp PLUS         &kp MINUS     &kp SLASH     &kp PERIOD    &kp EQUAL
+            >;
          sensor-bindings = <&encoder_msc_left_right>;
         };
 
