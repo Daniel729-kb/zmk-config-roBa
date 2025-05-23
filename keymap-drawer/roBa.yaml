@@ -279,7 +279,5 @@ combos:
   k: Sft+Z
 - p: [33, 32]
   k: Sft+/
-- p: [8, 7]
-  k: DELETE
 - p: [8, 9]
   k: BACKSPACE

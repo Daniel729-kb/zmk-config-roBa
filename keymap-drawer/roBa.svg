@@ -349,10 +349,6 @@ path.combo {
 <text x="701" y="140" class="combo tap">Sft+/</text>
 </g>
 <g class="combo combopos-7">
-<rect rx="6" ry="6" x="631" y="15" width="28" height="26" class="combo"/>
-<text x="645" y="28" class="combo tap">DELETE</text>
-</g>
-<g class="combo combopos-8">
 <rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
 <text x="701" y="28" class="combo tap"><tspan style="font-size: 78%">BACKSPACE</tspan></text>
 </g>
@@ -566,10 +562,6 @@ path.combo {
 <text x="701" y="140" class="combo tap">Sft+/</text>
 </g>
 <g class="combo combopos-7">
-<rect rx="6" ry="6" x="631" y="15" width="28" height="26" class="combo"/>
-<text x="645" y="28" class="combo tap">DELETE</text>
-</g>
-<g class="combo combopos-8">
 <rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
 <text x="701" y="28" class="combo tap"><tspan style="font-size: 78%">BACKSPACE</tspan></text>
 </g>
@@ -787,10 +779,6 @@ path.combo {
 <text x="701" y="140" class="combo tap">Sft+/</text>
 </g>
 <g class="combo combopos-7">
-<rect rx="6" ry="6" x="631" y="15" width="28" height="26" class="combo"/>
-<text x="645" y="28" class="combo tap">DELETE</text>
-</g>
-<g class="combo combopos-8">
 <rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
 <text x="701" y="28" class="combo tap"><tspan style="font-size: 78%">BACKSPACE</tspan></text>
 </g>
@@ -1047,10 +1035,6 @@ path.combo {
 <text x="701" y="140" class="combo tap">Sft+/</text>
 </g>
 <g class="combo combopos-7">
-<rect rx="6" ry="6" x="631" y="15" width="28" height="26" class="combo"/>
-<text x="645" y="28" class="combo tap">DELETE</text>
-</g>
-<g class="combo combopos-8">
 <rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
 <text x="701" y="28" class="combo tap"><tspan style="font-size: 78%">BACKSPACE</tspan></text>
 </g>
@@ -1271,10 +1255,6 @@ path.combo {
 <text x="701" y="140" class="combo tap">Sft+/</text>
 </g>
 <g class="combo combopos-7">
-<rect rx="6" ry="6" x="631" y="15" width="28" height="26" class="combo"/>
-<text x="645" y="28" class="combo tap">DELETE</text>
-</g>
-<g class="combo combopos-8">
 <rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
 <text x="701" y="28" class="combo tap"><tspan style="font-size: 78%">BACKSPACE</tspan></text>
 </g>
@@ -1483,10 +1463,6 @@ path.combo {
 <text x="701" y="140" class="combo tap">Sft+/</text>
 </g>
 <g class="combo combopos-7">
-<rect rx="6" ry="6" x="631" y="15" width="28" height="26" class="combo"/>
-<text x="645" y="28" class="combo tap">DELETE</text>
-</g>
-<g class="combo combopos-8">
 <rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
 <text x="701" y="28" class="combo tap"><tspan style="font-size: 78%">BACKSPACE</tspan></text>
 </g>
