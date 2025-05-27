@@ -16,7 +16,7 @@ layers:
   - D
   - F
   - G
-  - Gui+Sft+4
+  - Gui+Sft+S
   - '='
   - H
   - J
@@ -28,7 +28,7 @@ layers:
   - C
   - V
   - B
-  - Sft+2
+  - '@'
   - BACKSPACE
   - N
   - M
