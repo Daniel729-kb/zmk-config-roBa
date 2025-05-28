@@ -76,8 +76,8 @@
                 <&sl MOUSE>;
             
             label = "MKP_EXIT_AML";
-        }; -> #7 mkp_exit_AML: mkp_exit_AML
-    }; -> #6 macros
+        }; 
+    }; 
 
         cmd_space: cmd_space {
             compatible = "zmk,behavior-macro";  // Added missing comma
