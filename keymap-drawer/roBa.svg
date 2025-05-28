@@ -1069,9 +1069,7 @@ path.combo {
 </g>
 <g transform="translate(560, 28)" class="key keypos-6">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 64%">&amp;mkp_exit_…</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">LCLK</tspan>
-</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;macro_lef…</tspan></text>
 </g>
 <g transform="translate(617, 28)" class="key keypos-7">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1124,9 +1122,7 @@ path.combo {
 </g>
 <g transform="translate(560, 84)" class="key keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 64%">&amp;mkp_exit_…</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">LCLK</tspan>
-</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;macro_lef…</tspan></text>
 </g>
 <g transform="translate(617, 84)" class="key keypos-19">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1178,7 +1174,7 @@ path.combo {
 <g transform="translate(560, 140)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 64%">&amp;mkp_exit_…</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">LCLK</tspan>
+<tspan x="0" dy="-0.6em">&amp;mkp</tspan><tspan x="0" dy="1.2em">MB1</tspan>
 </text>
 </g>
 <g transform="translate(617, 140)" class="key trans keypos-31">
