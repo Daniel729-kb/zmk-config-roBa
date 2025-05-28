@@ -76,11 +76,10 @@
                 <&sl MOUSE>;
             
             label = "MKP_EXIT_AML";
-        }; 
-    }; 
+        };
 
         cmd_space: cmd_space {
-            compatible = "zmk,behavior-macro";  // Added missing comma
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(SPACE)>;
             label = "CMD_SPACE";
