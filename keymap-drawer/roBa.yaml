@@ -183,7 +183,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&macro_left_click'
+  - '&mkp_exit_AML LCLK'
   - '&mkp MB3'
   - '5'
   - '&mkp MB2'
@@ -195,7 +195,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&macro_left_click'
+  - '&mkp_exit_AML LCLK'
   - '5'
   - '&mkp MB2'
   - {t: ▽, type: trans}
@@ -207,8 +207,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB1'
-  - {t: ▽, type: trans}
+  - '&mkp_exit_AML LCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -216,7 +215,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '5'
-  - '&macro_left_click'
+  - '&mkp MB2'
+  - '&mkp MB1'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
