@@ -13,9 +13,7 @@
     quick-tap-ms = <0>;
 };
 
-&sl {
-    release-after-ms = <250>;
-};
+&sl { release-after-ms = <250>; };
 
 / {
     combos {
@@ -63,23 +61,30 @@
     };
 
     macros {
-        mkp_exit_AML: mkp_exit_AML {
+        to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = 
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0";
+        };
+
+        macro_left_click: macro_left_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
                 <&macro_press>,
-                <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
+                <&mkp LCLK>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
+                <&mkp LCLK>,
                 <&macro_tap>,
-                <&sl MOUSE>;
-            
-            label = "MKP_EXIT_AML";
+                <&tog_off 4 &sl 4>;
+
+            label = "MACRO_LEFT_CLICK";
         };
 
         cmd_space: cmd_space {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro";  // Added missing comma
             #binding-cells = <0>;
             bindings = <&kp LG(SPACE)>;
             label = "CMD_SPACE";
@@ -176,10 +181,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                 &trans  &mkp_exit_AML LCLK  &mkp MB3  &mo 5     &mkp MB2
-&trans  &trans  &trans  &trans  &trans  &trans                 &trans  &trans  &mkp_exit_AML LCLK  &mo 5     &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                 &trans  &trans  &mkp_exit_AML LCLK           &trans    &trans    &trans
-&trans  &trans  &trans  &mo 5  &mkp MB2   &mkp MB1      &trans  &trans                                         &trans
+&trans  &trans  &trans  &trans  &trans                                 &trans  &macro_left_click  &mkp MB3  &mo 5     &mkp MB2
+&trans  &trans  &trans  &trans  &trans  &trans                 &trans  &trans  &macro_left_click  &mo 5     &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                 &trans  &trans  &mkp MB1           &trans    &trans    &trans
+&trans  &trans  &trans  &mo 5  &mkp MB2   &mkp MB1     &trans  &trans                                         &trans
             >;
         };
 
