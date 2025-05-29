@@ -185,7 +185,7 @@
                 // Row 3
                 &kp F11       &kp F12       &trans        &trans        &trans     &trans      &trans    &trans        &trans        &kp COLON  &kp DQT       &kp UP_ARROW
                 // Row 4
-                &trans        &trans        &trans        &trans        &trans     &trans      &trans    &trans
+                &trans   &trans   &trans  &trans  &trans   &trans      &trans    &trans                                                           &kp DOWN_ARROW
             >;
             sensor-bindings = <&encoder_msc_left_right>;
         };
