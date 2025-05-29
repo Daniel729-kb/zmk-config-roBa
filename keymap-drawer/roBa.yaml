@@ -183,7 +183,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&macro_left_click'
+  - '&mkp MB1'
   - '&mkp MB3'
   - '5'
   - '&mkp MB2'
@@ -195,7 +195,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&macro_left_click'
+  - '&mkp MB1'
   - '5'
   - '&mkp MB2'
   - {t: ▽, type: trans}
@@ -265,6 +265,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
+- p: [18, 19]
+  k: {t: '4', h: toggle}
 - p: [11, 10]
   k: TAB
 - p: [11, 12]
@@ -279,5 +281,3 @@ combos:
   k: Sft+Z
 - p: [33, 32]
   k: Sft+/
-- p: [8, 9]
-  k: BACKSPACE
