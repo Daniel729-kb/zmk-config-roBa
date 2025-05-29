@@ -29,7 +29,7 @@ layers:
   - V
   - B
   - '@'
-  - BACKSPACE
+  - ;
   - N
   - M
   - ','
@@ -60,8 +60,8 @@ layers:
   - F8
   - F9
   - F10
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - MUTE
+  - VOLUME UP
   - ^
   - '&'
   - '*'
@@ -73,7 +73,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - VOL DN
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
