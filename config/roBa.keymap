@@ -19,6 +19,11 @@
     combos {
         compatible = "zmk,combos";
 
+        mouse_toggle {
+            bindings = <&tog 4>;  // Toggle mouse layer on/off
+            key-positions = <18 19>;  // J and K keys
+            timeout-ms = <50>;  // Quick activation
+        }
         tab {
             bindings = <&kp TAB>;
             key-positions = <11 10>;
