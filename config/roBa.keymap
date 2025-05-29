@@ -122,14 +122,6 @@
             bindings = <&sl>, <&kp>;
         };
 
-        // Toggle layer off only
-        tog_off: toggle_layer_off_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            display-name = "Toggle Layer Off";
-            toggle-mode = "off";
-        };
-
         // Encoder behaviors
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
@@ -145,14 +137,6 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
             tap-ms = <20>;
-        };
-
-        // Tap dance for mouse
-        tdmouse: tap_dance_mouse {
-            compatible = "zmk,behavior-tap-dance";
-            label = "tap_dance_mouse";
-            #binding-cells = <0>;
-            bindings = <&kp M>, <&to MOUSE>;
         };
     };
 
