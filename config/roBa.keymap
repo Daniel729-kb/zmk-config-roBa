@@ -81,6 +81,14 @@
     // MACROS SECTION
     // ========================
     macros {
+        // Macro to return to layer 0 with parameter
+        to_layer_0: to_layer_0 {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to DEFAULT>, <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0";
+        };
+
         // Command+Space macro for Mac
         cmd_space: cmd_space {
             compatible = "zmk,behavior-macro";
@@ -114,6 +122,14 @@
             bindings = <&sl>, <&kp>;
         };
 
+        // Toggle layer off only
+        tog_off: toggle_layer_off_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
+        };
+
         // Encoder behaviors
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
@@ -131,6 +147,13 @@
             tap-ms = <20>;
         };
 
+        // Tap dance for mouse
+        tdmouse: tap_dance_mouse {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance_mouse";
+            #binding-cells = <0>;
+            bindings = <&kp M>, <&to MOUSE>;
+        };
     };
 
     // ========================
