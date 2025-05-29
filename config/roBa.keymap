@@ -166,7 +166,7 @@
             bindings = <
 &kp Q             &kp W         &kp E      &kp R                         &kp T                                                               &kp Y               &kp U  &lt SCROLL I  &kp O    &kp P
 &mt LCTRL A       &mt S LCTRL   &kp D      &kp F                         &kp G                 &kp LG(LS(S))                  &kp EQUAL      &kp H               &kp J  &kp K         &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                         &kp B                 &kp AT                         &kp BACKSPACE  &kp N               &kp M  &kp COMMA     &kp DOT  &kp SLASH
+&mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                         &kp B                 &kp AT                         &kp SEMI       &kp N               &kp M  &kp COMMA     &kp DOT  &kp SLASH
 &kp LALT          &kp LEFT_GUI  &kp LCTRL  &lt_to_layer_0 SYSTEM ESCAPE  &space_sl2 NUM SPACE  &lt_to_layer_0 ARROW CAPS      &lt NUM SPACE  &lt FUNCTION ENTER                                &mt RIGHT_SHIFT DELETE
             >;
 
@@ -177,10 +177,10 @@
 
         function_layer {
             bindings = <
-&kp F1   &kp F2   &kp F3  &kp F4  &kp F5                       &kp NUMBER_6  &kp NUMBER_7   &kp N8        &kp NUMBER_9          &kp NUMBER_0
-&kp F6   &kp F7   &kp F8  &kp F9  &kp F10  &trans      &trans  &kp CARET     &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp F11  &kp F12  &trans  &trans  &trans   &trans      &trans  &trans        &trans         &trans        &trans                &kp UP_ARROW
-&trans   &trans   &trans  &trans  &trans   &trans      &trans  &trans                                                           &kp DOWN_ARROW
+&kp F1   &kp F2   &kp F3  &kp F4  &kp F5                                    &kp NUMBER_6  &kp NUMBER_7   &kp N8        &kp NUMBER_9          &kp NUMBER_0
+&kp F6   &kp F7   &kp F8  &kp F9  &kp F10  &kp K_MUTE      &kp C_VOLUME_UP  &kp CARET     &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp F11  &kp F12  &trans  &trans  &trans   &trans          &kp C_VOL_DN     &trans        &trans         &trans        &trans                &kp UP_ARROW
+&trans   &trans   &trans  &trans  &trans   &trans          &trans           &trans                                                           &kp DOWN_ARROW
             >;
         };
 
