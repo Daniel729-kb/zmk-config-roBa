@@ -8,7 +8,7 @@ layers:
   - T
   - Y
   - U
-  - {t: I, h: '5'}
+  - {t: I, h: scroll}
   - O
   - P
   - {t: A, h: LCTRL}
@@ -38,13 +38,13 @@ layers:
   - LALT
   - LEFT GUI
   - LCTRL
-  - {t: '&to_layer_0 ESCAPE', h: '6'}
-  - {t: SPACE, h: '6'}
-  - {t: '&to_layer_0 CAPS', h: ARROW}
-  - {t: SPACE, h: '6'}
-  - {t: ENTER, h: FUNCTION}
+  - {t: '&to_layer_0 ESCAPE', h: system}
+  - {t: SPACE, h: number}
+  - {t: '&to_layer_0 CAPS', h: arrow}
+  - {t: SPACE, h: number}
+  - {t: ENTER, h: function}
   - {t: DELETE, h: RIGHT SHIFT}
-  FUNCTION:
+  function:
   - F1
   - F2
   - F3
@@ -88,51 +88,51 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - DOWN ARROW
-  '6':
-  - Ctl+Q
-  - Ctl+W
+  number:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
-  - Ctl+A
-  - Ctl+S
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Ctl+Z
-  - Ctl+X
-  - Ctl+C
-  - Ctl+V
-  - {t: ▽, type: trans}
-  - '&bootloader'
-  - '&bootloader'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - F11
+  - F12
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BT CLR
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&cmd_space'
+  - {t: ▽, type: trans}
+  - ':'
+  - '"'
+  - UP ARROW
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BT CLR ALL
-  ARROW:
+  - DOWN ARROW
+  arrow:
   - Sft+LEFT ALT
   - {t: ▽, type: trans}
   - UP ARROW
@@ -175,18 +175,18 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - KP 0
-  - {t: ARROW, h: toggle}
-  '4':
+  - {t: arrow, h: toggle}
+  mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB1'
+  - '&mkp LCLK'
   - '&mkp MB3'
-  - '5'
-  - '&mkp MB2'
+  - scroll
+  - '&mkp RCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -195,9 +195,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB1'
-  - '5'
-  - '&mkp MB2'
+  - '&mkp LCLK'
+  - scroll
+  - '&mkp RCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -207,20 +207,20 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB1'
+  - '&mkp LCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '5'
-  - '&mkp MB2'
-  - '&mkp MB1'
+  - scroll
+  - '&mkp RCLK'
+  - '&mkp LCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '5':
+  scroll:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -264,9 +264,53 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  system:
+  - Ctl+Q
+  - Ctl+W
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - Ctl+A
+  - Ctl+S
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BT CLR
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&cmd_space'
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BT CLR ALL
 combos:
 - p: [18, 19]
-  k: {t: '4', h: toggle}
+  k: {t: mouse, h: toggle}
 - p: [11, 10]
   k: TAB
 - p: [11, 12]
