@@ -79,6 +79,11 @@
             bindings = <&kp RS(SLASH)>;
             key-positions = <33 32>;
         };
+
+        bs {
+            bindings = <&kp BSPC>;
+            key-positions = <9 8>;
+        };
     };
 
     // ========================
