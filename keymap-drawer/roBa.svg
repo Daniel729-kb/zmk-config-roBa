@@ -357,6 +357,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="127" width="28" height="26" class="combo"/>
 <text x="701" y="140" class="combo tap">Sft+/</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
+<text x="701" y="28" class="combo tap">BSPC</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 280)" class="layer-function">
@@ -575,6 +579,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="127" width="28" height="26" class="combo"/>
 <text x="701" y="140" class="combo tap">Sft+/</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
+<text x="701" y="28" class="combo tap">BSPC</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 560)" class="layer-number">
@@ -788,6 +796,10 @@ path.combo {
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="687" y="127" width="28" height="26" class="combo"/>
 <text x="701" y="140" class="combo tap">Sft+/</text>
+</g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
+<text x="701" y="28" class="combo tap">BSPC</text>
 </g>
 </g>
 </g>
@@ -1047,6 +1059,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="127" width="28" height="26" class="combo"/>
 <text x="701" y="140" class="combo tap">Sft+/</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
+<text x="701" y="28" class="combo tap">BSPC</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 1120)" class="layer-mouse">
@@ -1277,6 +1293,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="127" width="28" height="26" class="combo"/>
 <text x="701" y="140" class="combo tap">Sft+/</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
+<text x="701" y="28" class="combo tap">BSPC</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 1400)" class="layer-scroll">
@@ -1486,6 +1506,10 @@ path.combo {
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="687" y="127" width="28" height="26" class="combo"/>
 <text x="701" y="140" class="combo tap">Sft+/</text>
+</g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
+<text x="701" y="28" class="combo tap">BSPC</text>
 </g>
 </g>
 </g>
@@ -1705,6 +1729,10 @@ path.combo {
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="687" y="127" width="28" height="26" class="combo"/>
 <text x="701" y="140" class="combo tap">Sft+/</text>
+</g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="15" width="28" height="26" class="combo"/>
+<text x="701" y="28" class="combo tap">BSPC</text>
 </g>
 </g>
 </g>

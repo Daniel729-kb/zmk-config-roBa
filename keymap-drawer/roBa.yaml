@@ -325,3 +325,5 @@ combos:
   k: Sft+Z
 - p: [33, 32]
   k: Sft+/
+- p: [9, 8]
+  k: BSPC
