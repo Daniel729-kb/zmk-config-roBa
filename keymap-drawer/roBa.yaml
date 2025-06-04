@@ -12,7 +12,7 @@ layers:
   - O
   - P
   - {t: A, h: LCTRL}
-  - {t: LCTRL, h: S}
+  - {t: S, h: LCTRL}
   - D
   - F
   - G
