@@ -170,7 +170,7 @@
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E      &kp R                         &kp T                                                               &kp Y               &kp U  &lt SCROLL I  &kp O    &kp P
-&mt LCTRL A       &mt S LCTRL   &kp D      &kp F                         &kp G                 &kp LG(LS(S))                  &kp EQUAL      &kp H               &kp J  &kp K         &kp L    &kp MINUS
+&mt LCTRL A       &mt LCTRL S   &kp D      &kp F                         &kp G                 &kp LG(LS(S))                  &kp EQUAL      &kp H               &kp J  &kp K         &kp L    &kp MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                         &kp B                 &kp AT                         &kp SEMI       &kp N               &kp M  &kp COMMA     &kp DOT  &kp SLASH
 &kp LALT          &kp LEFT_GUI  &kp LCTRL  &lt_to_layer_0 SYSTEM ESCAPE  &space_sl2 NUM SPACE  &lt_to_layer_0 ARROW CAPS      &lt NUM SPACE  &lt FUNCTION ENTER                                &mt RIGHT_SHIFT DELETE
             >;
