@@ -219,10 +219,10 @@
 
         mouse_layer {
             bindings = <
-&trans  &trans  &trans  &trans      &trans                            &trans  &mkp LCLK  &mkp MB3    &mo SCROLL  &mkp RCLK
-&trans  &trans  &trans  &trans      &trans     &trans         &trans  &trans  &mkp LCLK  &mo SCROLL  &mkp RCLK   &trans
-&trans  &trans  &trans  &trans      &trans     &trans         &trans  &trans  &mkp LCLK  &trans      &trans      &trans
-&trans  &trans  &trans  &mo SCROLL  &mkp RCLK  &mkp LCLK      &trans  &trans                                     &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &mkp LCLK  &mkp MB3    &mo SCROLL  &mkp RCLK
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &mo SCROLL  &mkp RCLK   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &trans      &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                     &trans
             >;
         };
 
