@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: roBa}
 layers:
-  Default:
+  default:
   - Q
   - W
   - E
@@ -8,11 +8,11 @@ layers:
   - T
   - Y
   - U
-  - {t: I, h: Scroll}
+  - {t: I, h: scroll}
   - O
   - P
   - {t: A, h: LCTRL}
-  - {t: S, h: LALT}
+  - {t: S, h: LCTRL}
   - D
   - F
   - G
@@ -38,13 +38,13 @@ layers:
   - LALT
   - LEFT GUI
   - LCTRL
-  - {t: '&to_layer_0 ESCAPE', h: System}
-  - {t: SPACE, h: Numbers}
-  - {t: '&to_layer_0 CAPS', h: Mouse}
-  - {t: SPACE, h: Numbers}
-  - {t: ENTER, h: Function}
+  - {t: '&to_layer_0 ESCAPE', h: system}
+  - {t: SPACE, h: number}
+  - {t: '&to_layer_0 CAPS', h: mouse}
+  - {t: SPACE, h: number}
+  - {t: ENTER, h: function}
   - {t: DELETE, h: RIGHT SHIFT}
-  Function:
+  function:
   - F1
   - F2
   - F3
@@ -88,7 +88,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - DOWN ARROW
-  Numbers:
+  number:
   - '1'
   - '2'
   - '3'
@@ -132,7 +132,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - DOWN ARROW
-  Arrow:
+  arrow:
   - Sft+LEFT ALT
   - {t: ▽, type: trans}
   - UP ARROW
@@ -175,8 +175,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - KP 0
-  - {t: Arrow, h: toggle}
-  Mouse:
+  - {t: arrow, h: toggle}
+  mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -185,7 +185,7 @@ layers:
   - {t: ▽, type: trans}
   - '&mkp LCLK'
   - '&mkp MB3'
-  - Scroll
+  - scroll
   - '&mkp RCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -196,7 +196,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mkp LCLK'
-  - Scroll
+  - scroll
   - '&mkp RCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -220,7 +220,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Scroll:
+  scroll:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -264,7 +264,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  System:
+  system:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -309,21 +309,21 @@ layers:
   - {t: ▽, type: trans}
   - BT CLR ALL
 combos:
-- p: [1, 0]
-  k: ESC
+- p: [18, 19]
+  k: {t: mouse, h: toggle}
 - p: [11, 10]
   k: TAB
 - p: [11, 12]
   k: Alt+TAB
 - p: [20, 21]
   k: ENTER
-- p: [9, 8]
-  k: BSPC
-- p: [18, 19]
-  k: {t: Mouse, h: toggle}
 - p: [8, 7]
   k: '='
-- p: [33, 32]
-  k: '?'
+- p: [1, 0]
+  k: ESCAPE
 - p: [22, 23]
   k: Sft+Z
+- p: [33, 32]
+  k: Sft+/
+- p: [9, 8]
+  k: BSPC
