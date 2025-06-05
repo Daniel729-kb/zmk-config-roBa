@@ -40,7 +40,7 @@ layers:
   - LCTRL
   - {t: '&to_layer_0 ESCAPE', h: system}
   - {t: SPACE, h: number}
-  - {t: '&to_layer_0 CAPS', h: arrow}
+  - {t: '&to_layer_0 CAPS', h: mouse}
   - {t: SPACE, h: number}
   - {t: ENTER, h: function}
   - {t: DELETE, h: RIGHT SHIFT}
@@ -172,7 +172,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - KP 0
   - {t: arrow, h: toggle}
@@ -216,7 +216,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
