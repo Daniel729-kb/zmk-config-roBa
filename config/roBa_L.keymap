@@ -15,27 +15,20 @@
 #define KBD_SETTING 9
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
-
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 //マウスカーソルの挙動設定
-
 &mmv {
     delay-ms = <20>;
     trigger-period-ms = <5>;
     time-to-max-speed-ms = <200>;
-
-    // acceleration-exponent = <0>;
 };
 
 //マウススクロールの挙動設定
-
 &msc {
     delay-ms = <3>;
     trigger-period-ms = <3>;
     time-to-max-speed-ms = <200>;
-
-    // acceleration-exponent = <0>;
 };
 
 &mt {
@@ -61,7 +54,6 @@
         compatible = "zmk,combos";
 
         // Navigation combos
-
         tab {
             bindings = <&kp TAB>;
             key-positions = <11 10>;
@@ -73,7 +65,6 @@
         };
 
         // Punctuation combos
-
         enter_combo {
             bindings = <&kp ENTER>;
             key-positions = <20 21>;
@@ -90,7 +81,6 @@
         };
 
         // Letter combos
-
         shift_z {
             bindings = <&kp LS(Z)>;
             key-positions = <22 23>;
@@ -122,7 +112,6 @@
                 <&tog_off 1>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>;
-
             label = "BT0";
         };
 
@@ -135,7 +124,6 @@
                 <&bt BT_SEL 1 &bt BT_DISC 0 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>,
                 <&macro_wait_time 500>,
                 <&tog_on 1>;
-
             label = "BT1";
         };
 
@@ -148,7 +136,6 @@
                 <&bt BT_SEL 2 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 3 &bt BT_DISC 4>,
                 <&macro_wait_time 500>,
                 <&tog_on 1>;
-
             label = "BT2_IPAD";
         };
 
@@ -161,12 +148,10 @@
                 <&bt BT_SEL 3 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 4>,
                 <&macro_wait_time 500>,
                 <&tog_on 1>;
-
             label = "BT3_IPHONE";
         };
 
         // AML起動中にスクロールレイヤに入るためのマクロ(zaruSaruさん実装)
-
         to_scroll_layer_win: to_scroll_layer_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -177,7 +162,6 @@
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&mo FUNC_SCROLL_WIN>;
-
             label = "TO_SCROLL_LAYER_WIN";
         };
 
@@ -191,12 +175,10 @@
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&mo FUNC_SCROLL_MAC>;
-
             label = "TO_SCROLL_LAYER_MAC";
         };
 
         // タップ時のみAML解除するための設定
-
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -221,18 +203,15 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
 
         // タップ時のみAML解除するための設定
-
         mt_exit_AML_on_tap: mt_exit_AML_on_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_exit_AML_ON_TAP";
             bindings = <&kp>, <&kp_exit_AML>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
@@ -240,33 +219,23 @@
         };
 
         // ロータリーエンコーダーでスクロールする設定
-        // スクロール方向を逆にしたい場合は <&msc SCRL_DOWN> と <&msc SCRL_UP> を入れ替え
-        // 使い方: 設定したいレイヤーに sensor-bindings = <&encoder_msc_down_up>; を追記
-        // mac用
-
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
             tap-ms = <20>;
         };
-
-        //
-        // windows用
 
         encoder_msc_up_down: encoder_msc_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_UP_DOWN";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
             tap-ms = <20>;
         };
 
         // Ctrl+スクロール (Windows用)
-
         encoder_msc_ctrl_up_down: encoder_msc_ctrl_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_CTRL_UP_DOWN";
@@ -275,8 +244,6 @@
         };
 
         // 接続先に応じてデフォルトレイヤーを変更するための動作
-        // zmk studioで接続先ごとにマクロ設定する。
-
         tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -292,7 +259,6 @@
         };
 
         // リピート付きのSpace and Shift
-
         sands: space_and_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "SPACE_AND_SHIFT";
@@ -326,18 +292,39 @@
             bindings = <&lt>, <&kp>;
         };
 
-        // mod morphを使用したエンコーダーの挙動制御
-        // Windows用
-        // デフォルト: スクロール
-        // Shift: Shift+←/→
-        // Alt: Win+↑/↓
-        // Ctrl: Win+←/→
+        // Fixed space_sl2 behavior
+        space_sl2: space_sl2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPACE_STICKY_LAYER_2";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&sl>, <&kp>;
+        };
 
+        // Fixed lt_to_layer behaviors
+        lt_to_layer_3: lt_to_layer_3 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_3";
+            bindings = <&mo>, <&to>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        lt_to_layer_4: lt_to_layer_4 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_4";
+            bindings = <&mo>, <&to>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        // mod morphを使用したエンコーダーの挙動制御
         shift_p: shift_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(LEFT)>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
         };
@@ -346,7 +333,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&shift_p>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -354,7 +340,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(UP)>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -362,7 +347,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(LEFT)>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -370,7 +354,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&alt_p>, <&win_p>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -378,7 +361,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&shift_default_p>, <&alt_win_p>;
-
             mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -386,7 +368,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(RIGHT)>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
         };
@@ -395,7 +376,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&shift_n>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -403,7 +383,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(DOWN)>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -411,7 +390,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(RIGHT)>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -419,7 +397,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&alt_n>, <&win_n>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -427,7 +404,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&shift_default_n>, <&alt_win_n>;
-
             mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -435,33 +411,21 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_n>, <&mod_morph_encoder_p>;
-
             tap-ms = <20>;
         };
 
-        // Mac用
-        // デフォルト: スクロール
-        // GUI: command + +/-
-        // Shift: Shift+←/→
-        // Alt: Win+↑/↓
-        // Ctrl: Win+←/→
-        // positive: 手前
-
+        // Mac用エンコーダー
         gui_p: gui_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DELETE>, <&kp LG(PLUS)>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
-
-            // keep-mods = <(MOD_LGUI)>;
         };
 
         sftgui_default_p: sftgui_default_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&gui_p>;
-
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -469,27 +433,20 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LA(LC(LG(RIGHT)))>;
-
             mods = <(MOD_LCTL|MOD_RCTL)>;
-
-            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_p: opt_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LA(LC(LG(DOWN)))>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
-
-            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_ctrl_p: opt_ctrl_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ctrl_p>, <&opt_p>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -497,27 +454,20 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sftgui_default_p>, <&opt_ctrl_p>;
-
             mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
         };
-
-        // negative: 奥
 
         gui_n: gui_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp LG(MINUS)>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
-
-            // keep-mods = <(MOD_LGUI)>;
         };
 
         sftgui_default_n: sftgui_default_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&gui_n>;
-
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -525,27 +475,20 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LA(LC(LG(LEFT)))>;
-
             mods = <(MOD_LCTL|MOD_RCTL)>;
-
-            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_n: opt_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LA(LC(LG(UP)))>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
-
-            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_ctrl_n: opt_ctrl_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ctrl_n>, <&opt_n>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -553,7 +496,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sftgui_default_n>, <&opt_ctrl_n>;
-
             mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -561,16 +503,15 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_mac_p>, <&mod_morph_encoder_mac_n>;
-
             tap-ms = <20>;
         };
 
+        // Tap dance behaviors
         td_LT6_Lang1_and_MO4: td_LT6_Lang1_and_MO4 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LT6_LANG1_AND_MO4";
             #binding-cells = <0>;
-            bindings = <&lt 6 LANGUAGE_1>, <&mo 4>;
-
+            bindings = <&lt FUNC_SCROLL_WIN LANGUAGE_1>, <&mo SYMBOL_WIN>;
             tapping-term-ms = <240>;
         };
 
@@ -634,10 +575,10 @@
 
         DEFAULT_WIN {
             bindings = <
-&kp Q             &kp W         &kp E      &kp R                         &kp T                                                           &kp Y               &kp U  &lt 6 I  &kp O    &kp P
+&kp Q             &kp W         &kp E      &kp R                         &kp T                                                           &kp Y               &kp U  &lt FUNC_SCROLL_WIN I  &kp O    &kp P
 &mt LCTRL A       &mt LCTRL S   &kp D      &kp F                         &kp G                 &kp LG(LS(S))              &kp EQUAL      &kp H               &kp J  &kp K         &kp L    &kp MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                         &kp B                 &kp AT                     &kp SEMI       &kp N               &kp M  &kp COMMA     &kp DOT  &kp SLASH
-&kp LALT          &kp LEFT_GUI  &kp LCTRL  &lt_to_layer_3 SYSTEM ESCAPE  &space_sl2 NUM SPACE  &lt_to_layer_0 4 CAPS      &lt NUM SPACE  &lt FUNCTION ENTER                                &mt RIGHT_SHIFT DELETE
+&kp LALT          &kp LEFT_GUI  &kp LCTRL  &lt_to_layer_3 KBD_SETTING ESCAPE  &space_sl2 NUM_WIN SPACE  &lt_to_layer_0 SYMBOL_WIN CAPS      &lt NUM_WIN SPACE  &lt FUNC_SCROLL_WIN ENTER                                &mt RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
@@ -645,10 +586,10 @@
 
         DEFAULT_MAC {
             bindings = <
-&kp Q             &kp W         &kp E      &kp R                         &kp T                                                           &kp Y               &kp U  &lt 7 I  &kp O    &kp P
+&kp Q             &kp W         &kp E      &kp R                         &kp T                                                           &kp Y               &kp U  &lt FUNC_SCROLL_MAC I  &kp O    &kp P
 &mt LCTRL A       &mt LCTRL S   &kp D      &kp F                         &kp G                 &kp LG(LS(S))              &kp EQUAL      &kp H               &kp J  &kp K         &kp L    &kp MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                         &kp B                 &kp AT                     &kp SEMI       &kp N               &kp M  &kp COMMA     &kp DOT  &kp SLASH
-&kp LCTRL          &kp LALT  &kp LEFT_GUI  &lt_to_layer_4 SYSTEM ESCAPE  &space_sl2 NUM SPACE  &lt_to_layer_0 4 CAPS      &lt NUM SPACE  &lt FUNCTION ENTER                                &mt RIGHT_SHIFT DELETE
+&kp LCTRL          &kp LALT  &kp LEFT_GUI  &lt_to_layer_4 KBD_SETTING ESCAPE  &space_sl2 NUM_MAC SPACE  &lt_to_layer_0 SYMBOL_MAC CAPS      &lt NUM_MAC SPACE  &lt FUNC_SCROLL_MAC ENTER                                &mt RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&mod_morph_encoder_mac>;
