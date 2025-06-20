@@ -43,7 +43,7 @@ layers:
   - {t: '&to_layer_0 CAPS', h: '4'}
   - {t: SPACE, h: '2'}
   - {t: ENTER, h: '6'}
-  - {t: DELETE, h: RIGHT SHIFT}
+  - DEL
   '1':
   - Q
   - W
