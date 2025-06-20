@@ -60,14 +60,6 @@
     combos {
         compatible = "zmk,combos";
 
-        // Mouse layer toggle - J+K keys
-
-        mouse_toggle {
-            bindings = <&tog MOUSE>;
-            key-positions = <18 19>;
-            timeout-ms = <50>;
-        };
-
         // Navigation combos
 
         tab {
