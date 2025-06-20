@@ -52,48 +52,66 @@
     hold-while-undecided;
 };
 
-/ {
+/ / {
+    // ========================
+    // COMBOS SECTION
+    // ========================
+
     combos {
         compatible = "zmk,combos";
 
+        // Mouse layer toggle - J+K keys
+
+        mouse_toggle {
+            bindings = <&tog MOUSE>;
+            key-positions = <18 19>;
+            timeout-ms = <50>;
+        };
+
+        // Navigation combos
+
         tab {
             bindings = <&kp TAB>;
+            key-positions = <11 10>;
+        };
+
+        alt_tab {
+            bindings = <&kp LA(TAB)>;
             key-positions = <11 12>;
         };
 
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
+        // Punctuation combos
+
+        enter_combo {
+            bindings = <&kp ENTER>;
+            key-positions = <20 21>;
         };
 
-        Esc {
+        equals {
+            bindings = <&kp EQUAL>;
+            key-positions = <8 7>;
+        };
+
+        escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
+            key-positions = <1 0>;
         };
 
-        left_click {
-            bindings = <&mkp MB1>;
-            key-positions = <18 19>;
+        // Letter combos
+
+        shift_z {
+            bindings = <&kp LS(Z)>;
+            key-positions = <22 23>;
         };
 
-        right_click {
-            bindings = <&mkp MB2>;
-            key-positions = <19 20>;
+        question_mark {
+            bindings = <&kp RS(SLASH)>;
+            key-positions = <33 32>;
         };
 
-        middle_click {
-            bindings = <&mkp MB3>;
-            key-positions = <18 20>;
-        };
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <8 9>;
-        };
-
-        Globe {
-            bindings = <&kp RIGHT_ALT>;
-            key-positions = <34 42>;
+        bs {
+            bindings = <&kp BSPC>;
+            key-positions = <9 8>;
         };
     };
 
@@ -624,10 +642,10 @@
 
         DEFAULT_WIN {
             bindings = <
-&kp Q                             &kp W                        &kp E                           &kp R                           &kp T                                                                                              &kp Y            &kp U                           &lt 0 I                             &kp O                             &kp P
-&kp A                             &kp S                        &kp D                           &kp F                           &kp G                             &kp LC(N0)                                &kp ESCAPE             &kp H            &kp J                           &kp K                               &kp L                             &kp MINUS
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML_on_tap LCTRL X  &mt_exit_AML_on_tap LEFT_ALT C  &mt_exit_AML_on_tap LEFT_WIN V  &kp B                             &kp LEFT_PARENTHESIS                      &kp RIGHT_PARENTHESIS  &kp N            &mt_exit_AML_on_tap LEFT_WIN M  &mt_exit_AML_on_tap LEFT_ALT COMMA  &mt_exit_AML_on_tap LCTRL PERIOD  &mt_exit_AML_on_tap LEFT_SHIFT SLASH
-&lt 2 LANGUAGE_2                  &kp LS(F10)                  &mt LEFT_WIN TAB                &kp LEFT_ALT                    &mt_exit_AML_on_tap LCTRL DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                                                                                        &lt 6 LANGUAGE_1
+&kp Q             &kp W         &kp E      &kp R                         &kp T                                                           &kp Y               &kp U  &lt 6 I  &kp O    &kp P
+&mt LCTRL A       &mt LCTRL S   &kp D      &kp F                         &kp G                 &kp LG(LS(S))              &kp EQUAL      &kp H               &kp J  &kp K         &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                         &kp B                 &kp AT                     &kp SEMI       &kp N               &kp M  &kp COMMA     &kp DOT  &kp SLASH
+&kp LALT          &kp LEFT_GUI  &kp LCTRL  &lt_to_layer_3 SYSTEM ESCAPE  &space_sl2 NUM SPACE  &lt_to_layer_0 4 CAPS      &lt NUM SPACE  &lt FUNCTION ENTER                                &mt RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
@@ -635,10 +653,10 @@
 
         DEFAULT_MAC {
             bindings = <
-&kp Q                             &kp W                           &kp E                           &kp R                               &kp T                                                                                                     &kp Y            &kp U                               &lt 0 I                             &kp O                             &kp P
-&kp A                             &kp S                           &kp D                           &kp F                               &kp G                                    &kp LG(KP_NUMBER_0)                       &kp ESCAPE             &kp H            &kp J                               &kp K                               &kp L                             &kp MINUS
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML_on_tap LEFT_GUI X  &mt_exit_AML_on_tap LEFT_ALT C  &mt_exit_AML_on_tap LEFT_CONTROL V  &kp B                                    &kp LEFT_PARENTHESIS                      &kp RIGHT_PARENTHESIS  &kp N            &mt_exit_AML_on_tap LEFT_CONTROL M  &mt_exit_AML_on_tap LEFT_ALT COMMA  &mt_exit_AML_on_tap LEFT_GUI DOT  &mt_exit_AML_on_tap LEFT_SHIFT SLASH
-&lt 3 LANGUAGE_2                  &kp LC(LEFT_COMMAND)            &mt LEFT_CONTROL ESCAPE         &kp LEFT_ALT                        &mt_exit_AML_on_tap LEFT_COMMAND DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                                                                                            &lt 7 LANGUAGE_1
+&kp Q             &kp W         &kp E      &kp R                         &kp T                                                           &kp Y               &kp U  &lt 7 I  &kp O    &kp P
+&mt LCTRL A       &mt LCTRL S   &kp D      &kp F                         &kp G                 &kp LG(LS(S))              &kp EQUAL      &kp H               &kp J  &kp K         &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                         &kp B                 &kp AT                     &kp SEMI       &kp N               &kp M  &kp COMMA     &kp DOT  &kp SLASH
+&kp LCTRL          &kp LALT  &kp LEFT_GUI  &lt_to_layer_4 SYSTEM ESCAPE  &space_sl2 NUM SPACE  &lt_to_layer_0 4 CAPS      &lt NUM SPACE  &lt FUNCTION ENTER                                &mt RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&mod_morph_encoder_mac>;
@@ -646,10 +664,10 @@
 
         NUM_WIN {
             bindings = <
-&kp KP_DIVIDE  &kp N7  &kp N8            &kp N9            &kp KP_MULTIPLY                                            &kp ESCAPE  &none          &none        &none      &kp LA(PRINTSCREEN)
-&kp KP_MINUS   &kp N4  &kp N5            &kp N6            &kp KP_PLUS           &trans             &kp ESCAPE        &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans
-&kp N0         &kp N1  &kp N2            &kp N3            &kp PERIOD            &kp LESS_THAN      &kp GREATER_THAN  &kp HOME    &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans
-&mo 9          &trans  &kp LS(LEFT_WIN)  &kp LS(LEFT_ALT)  &kp LS(LEFT_CONTROL)  &trans             &trans            &trans                                             &mo 9
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                         &kp NUMBER_6  &kp NUMBER_7  &kp N8     &kp NUMBER_9  &kp NUMBER_0
+&kp EXCL      &kp AT        &kp POUND     &kp DLLR      &kp PRCNT  &trans      &trans  &kp CARET     &kp AMPS      &kp STAR   &kp LPAR      &kp RPAR
+&kp F11       &kp F12       &trans        &trans        &trans     &trans      &trans  &trans        &trans        &kp COLON  &kp DQT       &kp UP_ARROW
+&trans        &trans        &trans        &trans        &trans     &trans      &trans  &trans                                               &kp DOWN_ARROW
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
@@ -657,10 +675,10 @@
 
         NUM_MAC {
             bindings = <
-&kp KP_DIVIDE  &kp N7                  &kp N8                &kp N9            &kp KP_MULTIPLY                                        &kp ESCAPE    &none         &none       &none          &kp LS(LG(NUMBER_4))
-&kp KP_MINUS   &kp N4                  &kp N5                &kp N6            &kp KP_PLUS       &trans             &kp ESCAPE        &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &trans
-&kp N0         &kp N1                  &kp N2                &kp N3            &kp PERIOD        &kp LESS_THAN      &kp GREATER_THAN  &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans
-&mo 9          &kp LC(LG(LEFT_SHIFT))  &kp LS(LEFT_CONTROL)  &kp LS(LEFT_ALT)  &kp LS(LEFT_GUI)  &trans             &trans            &trans                                                 &mo 9
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                         &kp NUMBER_6  &kp NUMBER_7  &kp N8     &kp NUMBER_9  &kp NUMBER_0
+&kp EXCL      &kp AT        &kp POUND     &kp DLLR      &kp PRCNT  &trans      &trans  &kp CARET     &kp AMPS      &kp STAR   &kp LPAR      &kp RPAR
+&kp F11       &kp F12       &trans        &trans        &trans     &trans      &trans  &trans        &trans        &kp COLON  &kp DQT       &kp UP_ARROW
+&trans        &trans        &trans        &trans        &trans     &trans      &trans  &trans                                               &kp DOWN_ARROW
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
