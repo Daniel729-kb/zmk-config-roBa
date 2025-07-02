@@ -645,7 +645,7 @@
 &kp Q             &kp W         &kp E      &kp R                         &kp T                                                           &kp Y               &kp U  &lt 6 I  &kp O    &kp P
 &mt LCTRL A       &mt LCTRL S   &kp D      &kp F                         &kp G                 &kp LG(LS(S))              &kp EQUAL      &kp H               &kp J  &kp K         &kp L    &kp MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                         &kp B                 &kp AT                     &kp SEMI       &kp N               &kp M  &kp COMMA     &kp DOT  &kp SLASH
-&kp LALT          &kp LEFT_GUI  &kp LCTRL  &lt_to_layer_3 SYSTEM ESCAPE  &space_sl2 NUM SPACE  &lt_to_layer_0 4 CAPS      &lt NUM SPACE  &lt FUNCTION ENTER                                &mt RIGHT_SHIFT DELETE
+&kp LALT          &kp LEFT_GUI  &kp LCTRL  &lt_to_layer_3 SYSTEM ESCAPE  &lt 1 SPACE   &lt_to_layer_0 4 CAPS      &lt NUM SPACE  &lt FUNCTION ENTER                                &mt RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
@@ -656,7 +656,7 @@
 &kp Q             &kp W         &kp E      &kp R                         &kp T                                                           &kp Y               &kp U  &lt 7 I  &kp O    &kp P
 &mt LCTRL A       &mt LCTRL S   &kp D      &kp F                         &kp G                 &kp LG(LS(S))              &kp EQUAL      &kp H               &kp J  &kp K         &kp L    &kp MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                         &kp B                 &kp AT                     &kp SEMI       &kp N               &kp M  &kp COMMA     &kp DOT  &kp SLASH
-&kp LCTRL          &kp LALT  &kp LEFT_GUI  &lt_to_layer_4 SYSTEM ESCAPE  &space_sl2 NUM SPACE  &lt_to_layer_0 4 CAPS      &lt NUM SPACE  &lt FUNCTION ENTER                                &mt RIGHT_SHIFT DELETE
+&kp LCTRL          &kp LALT  &kp LEFT_GUI  &lt_to_layer_4 SYSTEM ESCAPE  &lt 2 SPACE  &lt_to_layer_0 4 CAPS      &lt NUM SPACE  &lt FUNCTION ENTER                                &mt RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&mod_morph_encoder_mac>;
