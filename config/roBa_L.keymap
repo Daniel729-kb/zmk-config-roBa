@@ -120,7 +120,7 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 0>, <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
 
@@ -220,7 +220,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <1>;
-            bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>, <&exit_AML>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
             label = "KP_exit_AML";
         };
     };
@@ -336,6 +336,7 @@
         };
 
         // Fixed space_sl2 behavior
+
         space_sl2: space_sl2 {
             compatible = "zmk,behavior-hold-tap";
             label = "SPACE_STICKY_LAYER_2";
@@ -347,10 +348,12 @@
         };
 
         // Fixed lt_to_layer behaviors
+
         lt_to_layer_3: lt_to_layer_3 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_3";
             bindings = <&mo>, <&to>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -359,6 +362,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_4";
             bindings = <&mo>, <&to>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -374,6 +378,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(LEFT)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
         };
@@ -382,6 +387,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&shift_p>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -389,6 +395,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(UP)>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -396,6 +403,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(LEFT)>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -403,6 +411,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&alt_p>, <&win_p>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -410,6 +419,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&shift_default_p>, <&alt_win_p>;
+
             mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -417,6 +427,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(RIGHT)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
         };
@@ -425,6 +436,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&shift_n>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -432,6 +444,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(DOWN)>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -439,6 +452,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(RIGHT)>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -446,6 +460,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&alt_n>, <&win_n>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -453,6 +468,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&shift_default_n>, <&alt_win_n>;
+
             mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -460,6 +476,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_n>, <&mod_morph_encoder_p>;
+
             tap-ms = <20>;
         };
 
@@ -475,6 +492,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DELETE>, <&kp LG(PLUS)>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -482,6 +500,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&gui_p>;
+
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -489,6 +508,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(RIGHT)))>;
+
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -496,6 +516,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(DOWN)))>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -503,6 +524,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ctrl_p>, <&opt_p>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -510,6 +532,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sftgui_default_p>, <&opt_ctrl_p>;
+
             mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -519,6 +542,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp LG(MINUS)>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -526,6 +550,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&gui_n>;
+
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -533,6 +558,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(LEFT)))>;
+
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -540,6 +566,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(UP)))>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -547,6 +574,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ctrl_n>, <&opt_n>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -554,6 +582,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sftgui_default_n>, <&opt_ctrl_n>;
+
             mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -561,6 +590,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_mac_p>, <&mod_morph_encoder_mac_n>;
+
             tap-ms = <20>;
         };
 
@@ -569,6 +599,7 @@
             label = "TD_LT6_LANG1_AND_MO4";
             #binding-cells = <0>;
             bindings = <&lt FUNC_SCROLL_WIN LANGUAGE_1>, <&mo SYMBOL_WIN>;
+
             tapping-term-ms = <240>;
         };
 
@@ -632,10 +663,10 @@
 
         DEFAULT_WIN {
             bindings = <
-&kp Q             &kp W         &kp E      &kp R                                      &kp T                                                                                    &kp Y                          &kp U  &lt FUNC_SCROLL_WIN I  &kp O    &kp P
-&mt LCTRL A       &mt LCTRL S   &kp D      &kp F                                      &kp G                          &kp LG(LS(S))                       &kp EQUAL                      &kp H                          &kp J  &kp K                  &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                                      &kp B                          &kp AT                              &kp SEMI                       &kp N                          &kp M  &kp COMMA              &kp DOT  &kp SLASH
-&kp LALT          &kp LEFT_GUI  &kp LCTRL  &lt_to_layer_3 KBD_SETTING ESCAPE  &space_sl2 NUM_WIN SPACE  &lt_to_layer_0 SYMBOL_WIN CAPS      &lt NUM_WIN SPACE  &lt FUNC_SCROLL_WIN ENTER                                                     &mt RIGHT_SHIFT DELETE
+&kp Q             &kp W         &kp E      &kp R                              &kp T                                                                     &kp Y                      &kp U  &lt FUNC_SCROLL_WIN I  &kp O    &kp P
+&mt LCTRL A       &mt LCTRL S   &kp D      &kp F                              &kp G              &kp LG(LS(S))                       &kp EQUAL          &kp H                      &kp J  &kp K                  &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                              &kp B              &kp AT                              &kp SEMI           &kp N                      &kp M  &kp COMMA              &kp DOT  &kp SLASH
+&kp LALT          &kp LEFT_GUI  &kp LCTRL  &lt_to_layer_3 KBD_SETTING ESCAPE  &lt NUM_WIN SPACE  &lt_to_layer_0 SYMBOL_WIN CAPS      &lt NUM_WIN SPACE  &lt FUNC_SCROLL_WIN ENTER                                         &mt RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
@@ -643,10 +674,10 @@
 
         DEFAULT_MAC {
             bindings = <
-&kp Q             &kp W         &kp E      &kp R                                      &kp T                                                                                    &kp Y                          &kp U  &lt FUNC_SCROLL_MAC I  &kp O    &kp P
-&mt LCTRL A       &mt LCTRL S   &kp D      &kp F                                      &kp G                          &kp LG(LS(S))                       &kp EQUAL                      &kp H                          &kp J  &kp K                  &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                                      &kp B                          &kp AT                              &kp SEMI                       &kp N                          &kp M  &kp COMMA              &kp DOT  &kp SLASH
-&kp LCTRL         &kp LALT      &kp LEFT_GUI  &lt_to_layer_4 KBD_SETTING ESCAPE  &space_sl2 NUM_MAC SPACE  &lt_to_layer_0 SYMBOL_MAC CAPS      &lt NUM_MAC SPACE  &lt FUNC_SCROLL_MAC ENTER                                                     &mt RIGHT_SHIFT DELETE
+&kp Q             &kp W        &kp E         &kp R                              &kp T                                                                     &kp Y                      &kp U  &lt FUNC_SCROLL_MAC I  &kp O    &kp P
+&mt LCTRL A       &mt LCTRL S  &kp D         &kp F                              &kp G              &kp LG(LS(S))                       &kp EQUAL          &kp H                      &kp J  &kp K                  &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X        &kp C         &kp V                              &kp B              &kp AT                              &kp SEMI           &kp N                      &kp M  &kp COMMA              &kp DOT  &kp SLASH
+&kp LCTRL         &kp LALT     &kp LEFT_GUI  &lt_to_layer_4 KBD_SETTING ESCAPE  &lt NUM_MAC SPACE  &lt_to_layer_0 SYMBOL_MAC CAPS      &lt NUM_MAC SPACE  &lt FUNC_SCROLL_MAC ENTER                                         &mt RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&mod_morph_encoder_mac>;
