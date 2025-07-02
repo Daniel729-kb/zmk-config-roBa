@@ -8,14 +8,13 @@ on:
       - "config/*.dtsi"
       - "keymap_drawer.config.yaml"
       - "keymap-drawer/**"
-
 jobs:
   draw:
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     permissions:
       contents: write  # allow workflow to commit to the repo
     with:
-      keymap_patterns: "config/*.keymap"        # path to the keymaps to parse
+      keymap_patterns: "config/roBa_L.keymap"        # Parse only the main keymap file
       config_path: "keymap_drawer.config.yaml"      # config file, ignored if not exists
       output_folder: "keymap-drawer"                 # path to save produced SVG and keymap YAML files
       parse_args: "--zmk-keyboard roBa"              # specify the keyboard name explicitly
