@@ -1,21 +1,62 @@
-# Example for using the keymap-drawer ZMK user config workflow
+# .github/workflows/draw-zmk.yml
 name: Draw ZMK keymaps
 on:
-  workflow_dispatch:  # can be triggered manually
-  push:               # automatically run on changes to following paths
+  workflow_dispatch:
+  push:
     paths:
       - "config/*.keymap"
       - "config/*.dtsi"
       - "keymap_drawer.config.yaml"
       - "keymap-drawer/**"
+
 jobs:
   draw:
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     permissions:
-      contents: write  # allow workflow to commit to the repo
+      contents: write
     with:
-      keymap_patterns: "config/roBa.keymap"              # Use the main keymap file
-      config_path: "keymap_drawer.config.yaml"          # config file, ignored if not exists
-      output_folder: "keymap-drawer"                     # path to save produced SVG and keymap YAML files
-      parse_args: ""
-      draw_args: ""                                      # map of extra args to pass to `keymap draw`
+      keymap_patterns: "config/roBa.keymap"
+      config_path: "keymap_drawer.config.yaml"
+      output_folder: "keymap-drawer"
+      
+      # Generate multiple views
+      draw_args: >
+        --keys-only
+        --separate-layers
+        --layer-names "default_win,numbers,symbols_win,function_scroll_win"
+        --output-format svg,png
+        
+      # Parse with enhanced configuration  
+      parse_args: >
+        --config keymap_drawer.config.yaml
+        --layer-names "default_win=Base (Win),default_mac=Base (Mac),numbers=Numbers,symbols_win=Symbols (Win),symbols_mac=Symbols (Mac),function_scroll_win=Function (Win),function_scroll_mac=Function (Mac),aml=Auto Mouse,mouse=Mouse,system=System"
+
+  draw_compact:
+    runs-on: ubuntu-latest
+    needs: draw
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Generate compact layout
+        run: |
+          # Create a compact version showing only essential layers
+          keymap draw config/roBa.keymap \
+            --config keymap_drawer.config.yaml \
+            --layers "default_win,numbers,symbols_win" \
+            --output keymap-drawer/roBa_compact.svg
+            
+      - name: Generate comparison view  
+        run: |
+          # Side-by-side Windows vs Mac
+          keymap draw config/roBa.keymap \
+            --config keymap_drawer.config.yaml \
+            --layers "default_win,default_mac" \
+            --layout-columns 2 \
+            --output keymap-drawer/roBa_win_vs_mac.svg
+            
+      - name: Commit generated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update keymap visualizations"
+          file_pattern: "keymap-drawer/*.svg keymap-drawer/*.png"
