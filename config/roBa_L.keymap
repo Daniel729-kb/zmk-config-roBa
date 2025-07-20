@@ -69,11 +69,6 @@
             key-positions = <11 10>;
         };
 
-        alt_tab {
-            bindings = <&kp LA(TAB)>;
-            key-positions = <11 12>;
-        };
-
         // Punctuation combos
 
         enter_combo {
