@@ -17,7 +17,7 @@
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 //マウスカーソルの挙動設定
 
