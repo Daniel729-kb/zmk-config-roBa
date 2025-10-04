@@ -648,6 +648,7 @@
 
     keymap {
         compatible = "zmk,keymap";
+        zmk,keyboard = "roBa_L";
 
         DEFAULT_WIN {
             bindings = <
