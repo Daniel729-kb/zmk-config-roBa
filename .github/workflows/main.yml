@@ -5,33 +5,20 @@ on:
   push:
     branches: [ roBaish-o ]
     paths:
-      - "config/roBa_L.keymap"
-      - "config/roBa_R.keymap"
+      - "config/roBa.keymap"
       - "keymap_drawer.config.yaml"
       - "config/boards/shields/roBa/roBa.dtsi"
 
 jobs:
   draw:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      - name: Install keymap-drawer
-        run: pip install keymap-drawer
-      - name: Parse keymap
-        run: |
-          mkdir -p keymap-drawer
-          keymap-drawer parse config/roBa_L.keymap --config keymap_drawer.config.yaml --output keymap-drawer/roBa_L.yaml
-      - name: Draw keymap
-        run: |
-          keymap-drawer draw keymap-drawer/roBa_L.yaml --config keymap_drawer.config.yaml --output keymap-drawer/roBa_L.svg
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add keymap-drawer/
-          git diff --staged --quiet || git commit -m "[Draw] Update keymap drawing"
-          git push
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write
+    with:
+      commit_message: "[Draw] ${{ github.event.head_commit.message || 'Update keymap drawing' }}"
+      amend_commit: false
+      keymap_patterns: "config/roBa.keymap"
+      json_path: "config"
+      config_path: "keymap_drawer.config.yaml"
+      output_folder: "keymap-drawer"
+      destination: "both"

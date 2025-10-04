@@ -17,7 +17,7 @@
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 //マウスカーソルの挙動設定
 
@@ -62,23 +62,11 @@
         compatible = "zmk,combos";
 
         // Mouse layer toggle - J+K keys
-
-        mouse_toggle {
-            bindings = <&tog MOUSE>;
-            key-positions = <18 19>;
-            timeout-ms = <50>;
-        };
-
         // Navigation combos
 
         tab {
             bindings = <&kp TAB>;
             key-positions = <11 10>;
-        };
-
-        alt_tab {
-            bindings = <&kp LA(TAB)>;
-            key-positions = <11 12>;
         };
 
         // Punctuation combos
@@ -660,6 +648,7 @@
 
     keymap {
         compatible = "zmk,keymap";
+        zmk,physical-layout = &roBa_L_physical_layout;
 
         DEFAULT_WIN {
             bindings = <
@@ -752,7 +741,7 @@
         AML {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
@@ -770,12 +759,16 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
     };
 };
+// Trigger keymap drawer generation from roBa_L.keymap
+// Test workflow fix - Sat Oct  4 22:44:23 JST 2025
 
-# Trigger keymap drawer update
+// Manual trigger for keymap drawer on roBaish-o branch
+// Test fixed workflow on roBaish-o branch
+// Test custom workflow approach
