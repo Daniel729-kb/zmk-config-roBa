@@ -774,3 +774,4 @@
 // Test custom workflow approach
 // Test workflow for roBa_L.keymap drawing
 // Test with exact physical layout name match
+// Trigger keymap.svg generation
