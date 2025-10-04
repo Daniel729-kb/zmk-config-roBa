@@ -379,18 +379,20 @@
             tapping-term-ms = <200>;
         };
 
-        // mod morphを使用したエンコーダーの挙動制御
-        // Windows用
-        // デフォルト: スクロール
-        // Shift: Shift+←/→
-        // Alt: Win+↑/↓
-        // Ctrl: Win+←/→
-
+        // -------------------------------------------------------------------------
+        // MOD-MORPH ENCODER BEHAVIORS (WINDOWS)
+        // -------------------------------------------------------------------------
+        // Advanced encoder behaviors that change based on modifier keys
+        // Default: Scroll up/down
+        // Shift: Horizontal navigation (Win+Left/Right)
+        // Alt: Virtual desktop navigation (Win+Up/Down)
+        // Ctrl: Window management (Win+Left/Right)
+        
+        // Positive rotation (clockwise) behaviors
         shift_p: shift_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(LEFT)>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
         };
@@ -399,7 +401,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&shift_p>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -407,7 +408,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(UP)>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -415,7 +415,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(LEFT)>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -423,7 +422,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&alt_p>, <&win_p>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -431,15 +429,14 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&shift_default_p>, <&alt_win_p>;
-
             mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
         };
 
+        // Negative rotation (counter-clockwise) behaviors
         shift_n: shift_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(RIGHT)>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
         };
@@ -448,7 +445,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&shift_n>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -456,7 +452,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(DOWN)>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -464,7 +459,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(RIGHT)>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -472,7 +466,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&alt_n>, <&win_n>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -480,31 +473,32 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&shift_default_n>, <&alt_win_n>;
-
             mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
         };
 
+        // Combined encoder behavior for Windows
         mod_morph_encoder: mod_morph_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_n>, <&mod_morph_encoder_p>;
-
             tap-ms = <20>;
         };
 
-        // Mac用
-        // デフォルト: スクロール
-        // GUI: command + +/-
-        // Shift: Shift+←/→
-        // Alt: Win+↑/↓
-        // Ctrl: Win+←/→
-        // positive: 手前
-
+        // -------------------------------------------------------------------------
+        // MOD-MORPH ENCODER BEHAVIORS (MAC)
+        // -------------------------------------------------------------------------
+        // Mac-specific encoder behaviors
+        // Default: Scroll up/down
+        // Cmd: Zoom in/out (Cmd+Plus/Minus)
+        // Shift: Horizontal navigation
+        // Alt: Mission Control navigation
+        // Ctrl: Window management
+        
+        // Positive rotation (clockwise) behaviors for Mac
         gui_p: gui_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DELETE>, <&kp LG(PLUS)>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -512,7 +506,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&gui_p>;
-
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -520,7 +513,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(RIGHT)))>;
-
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -528,7 +520,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(DOWN)))>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -536,7 +527,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ctrl_p>, <&opt_p>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -544,17 +534,14 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sftgui_default_p>, <&opt_ctrl_p>;
-
             mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
         };
 
-        // negative: 奥
-
+        // Negative rotation (counter-clockwise) behaviors for Mac
         gui_n: gui_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp LG(MINUS)>;
-
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -562,7 +549,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&gui_n>;
-
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -570,7 +556,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(LEFT)))>;
-
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -578,7 +563,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(UP)))>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -586,7 +570,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ctrl_n>, <&opt_n>;
-
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -594,27 +577,31 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sftgui_default_n>, <&opt_ctrl_n>;
-
             mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
         };
 
+        // Combined encoder behavior for Mac
         mod_morph_encoder_mac: mod_morph_encoder_mac {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_mac_p>, <&mod_morph_encoder_mac_n>;
-
             tap-ms = <20>;
         };
 
+        // -------------------------------------------------------------------------
+        // TAP DANCE BEHAVIORS
+        // -------------------------------------------------------------------------
+        // Advanced tap dance behaviors for complex key combinations
+        
         td_LT6_Lang1_and_MO4: td_LT6_Lang1_and_MO4 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LT6_LANG1_AND_MO4";
             #binding-cells = <0>;
             bindings = <&lt FUNC_SCROLL_WIN LANGUAGE_1>, <&mo SYMBOL_WIN>;
-
             tapping-term-ms = <240>;
         };
 
+        // Modifier tap dance behaviors with AML exit functionality
         td_mt_left_ctrl: td_mt_left_ctrl {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MT_LEFT_CTRL";
@@ -670,9 +657,20 @@
         };
     };
 
+    // =============================================================================
+    // KEYMAP LAYERS
+    // =============================================================================
+    // This section defines all the keymap layers and their key bindings
+    // Each layer serves a specific purpose and is optimized for different use cases
+    
     keymap {
         compatible = "zmk,keymap";
 
+        // -------------------------------------------------------------------------
+        // DEFAULT_WIN - Base layer for Windows
+        // -------------------------------------------------------------------------
+        // Primary typing layer with Windows-specific shortcuts
+        // Features: Mod-tap on home row, layer access via thumb keys
         DEFAULT_WIN {
             bindings = <
 &kp Q             &kp W         &kp E      &kp R                       &kp T                                                                     &kp Y                      &kp U  &lt FUNC_SCROLL_WIN I  &kp O    &kp P
@@ -684,6 +682,11 @@
             sensor-bindings = <&mod_morph_encoder>;
         };
 
+        // -------------------------------------------------------------------------
+        // DEFAULT_MAC - Base layer for Mac
+        // -------------------------------------------------------------------------
+        // Primary typing layer with Mac-specific shortcuts
+        // Features: Cmd instead of Ctrl, Mac-specific key combinations
         DEFAULT_MAC {
             bindings = <
 &kp Q             &kp W        &kp E         &kp R                   &kp T                                                          &kp Y                      &kp U  &lt FUNC_SCROLL_MAC I  &kp O    &kp P
@@ -695,6 +698,11 @@
             sensor-bindings = <&mod_morph_encoder_mac>;
         };
 
+        // -------------------------------------------------------------------------
+        // NUM_WIN - Numbers and symbols layer for Windows
+        // -------------------------------------------------------------------------
+        // Provides easy access to numbers, symbols, and Windows-specific shortcuts
+        // Features: Numbers on top row, symbols on second row, navigation keys
         NUM_WIN {
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                         &kp NUMBER_6  &kp NUMBER_7  &kp N8     &kp NUMBER_9  &kp NUMBER_0
@@ -706,6 +714,11 @@
             sensor-bindings = <&mod_morph_encoder>;
         };
 
+        // -------------------------------------------------------------------------
+        // NUM_MAC - Numbers and symbols layer for Mac
+        // -------------------------------------------------------------------------
+        // Mac-specific numbers and symbols with volume control
+        // Features: Same layout as Windows but with Mac-specific encoder behavior
         NUM_MAC {
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                         &kp NUMBER_6  &kp NUMBER_7  &kp N8     &kp NUMBER_9  &kp NUMBER_0
@@ -717,6 +730,11 @@
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
         };
 
+        // -------------------------------------------------------------------------
+        // SYMBOL_WIN - Extended symbols layer for Windows
+        // -------------------------------------------------------------------------
+        // Comprehensive symbol access with Windows-specific modifier combinations
+        // Features: All common symbols, Windows modifier shortcuts
         SYMBOL_WIN {
             bindings = <
 &kp SQT      &kp DOUBLE_QUOTES  &kp EXCLAMATION   &kp QUESTION      &kp TILDE                                              &kp BACKSLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &kp PERCENT
@@ -728,6 +746,11 @@
             sensor-bindings = <&mod_morph_encoder>;
         };
 
+        // -------------------------------------------------------------------------
+        // SYMBOL_MAC - Extended symbols layer for Mac
+        // -------------------------------------------------------------------------
+        // Mac-specific symbols with volume control via encoder
+        // Features: Same symbols as Windows but with Mac-specific encoder behavior
         SYMBOL_MAC {
             bindings = <
 &kp SQT      &kp DOUBLE_QUOTES  &kp EXCLAMATION  &kp QUESTION      &kp TILDE                                              &kp BACKSLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &kp PERCENT
@@ -739,6 +762,11 @@
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
+        // -------------------------------------------------------------------------
+        // FUNC_SCROLL_WIN - Function keys and scrolling layer for Windows
+        // -------------------------------------------------------------------------
+        // Function keys, Windows shortcuts, and virtual desktop navigation
+        // Features: F1-F12, Windows-specific shortcuts, virtual desktop controls
         FUNC_SCROLL_WIN {
             bindings = <
 &kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans         &kp LS(LG(S))
@@ -750,6 +778,11 @@
             sensor-bindings = <&mod_morph_encoder>;
         };
 
+        // -------------------------------------------------------------------------
+        // FUNC_SCROLL_MAC - Function keys and scrolling layer for Mac
+        // -------------------------------------------------------------------------
+        // Mac-specific function keys and Mission Control navigation
+        // Features: F1-F12, Mac-specific shortcuts, Mission Control, zoom controls
         FUNC_SCROLL_MAC {
             bindings = <
 &kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LG(PAGE_UP)  &kp LG(PAGE_DOWN)  &none          &kp LS(LG(NUMBER_4))
@@ -761,6 +794,11 @@
             sensor-bindings = <&inc_dec_kp LG(PLUS) LG(MINUS)>;
         };
 
+        // -------------------------------------------------------------------------
+        // AML - Advanced Mouse Layer
+        // -------------------------------------------------------------------------
+        // Provides mouse functionality with left, right, and middle mouse buttons
+        // Features: Mouse buttons (MB1, MB2, MB3) for precise cursor control
         AML {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
@@ -770,6 +808,11 @@
             >;
         };
 
+        // -------------------------------------------------------------------------
+        // KBD_SETTING - Keyboard settings and Bluetooth management
+        // -------------------------------------------------------------------------
+        // System controls, Bluetooth device switching, and keyboard settings
+        // Features: Brightness, volume, Bluetooth device selection, bootloader access
         KBD_SETTING {
             bindings = <
 &trans          &trans  &trans  &trans  &trans                                &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
@@ -779,6 +822,11 @@
             >;
         };
 
+        // -------------------------------------------------------------------------
+        // MOUSE - Additional mouse functionality
+        // -------------------------------------------------------------------------
+        // Alternative mouse layer with same functionality as AML
+        // Features: Identical to AML layer for redundancy
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
