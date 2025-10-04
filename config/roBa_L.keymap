@@ -648,7 +648,6 @@
 
     keymap {
         compatible = "zmk,keymap";
-        zmk,physical-layout = &roBa_L;
 
         DEFAULT_WIN {
             bindings = <
@@ -771,7 +770,3 @@
 
 // Manual trigger for keymap drawer on roBaish-o branch
 // Test fixed workflow on roBaish-o branch
-// Test custom workflow approach
-// Test workflow for roBa_L.keymap drawing
-// Test with exact physical layout name match
-// Trigger keymap.svg generation
