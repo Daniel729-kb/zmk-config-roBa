@@ -8,7 +8,7 @@
     
     roBa_L: roBa_L {
         compatible = "zmk,physical-layout";
-        display-name = "Default";
+        display-name = "roBa_L";
         transform = <&default_transform>;
         kscan = <&kscan0>;
 
