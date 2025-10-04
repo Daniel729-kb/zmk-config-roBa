@@ -3,10 +3,10 @@
 
 / {
     chosen {
-        zmk,physical-layout = &roBa_L_physical_layout;
+        zmk,physical-layout = &roBa_L;
     };
     
-    roBa_L_physical_layout: roBa_L_physical_layout {
+    roBa_L: roBa_L {
         compatible = "zmk,physical-layout";
         display-name = "Default";
         transform = <&default_transform>;

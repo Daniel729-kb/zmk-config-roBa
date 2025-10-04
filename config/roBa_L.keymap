@@ -648,7 +648,7 @@
 
     keymap {
         compatible = "zmk,keymap";
-        zmk,physical-layout = &roBa_L_physical_layout;
+        zmk,physical-layout = &roBa_L;
 
         DEFAULT_WIN {
             bindings = <
