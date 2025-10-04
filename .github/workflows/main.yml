@@ -3,6 +3,7 @@ name: "Draw Keymap"
 on:
   workflow_dispatch:
   push:
+    branches: [ roBaish-o ]
     paths:
       - "config/roBa.keymap"
       - "keymap_drawer.config.yaml"
