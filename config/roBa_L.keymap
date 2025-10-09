@@ -14,6 +14,7 @@
 // =============================================================================
 // LAYER DEFINITIONS
 // =============================================================================
+
 #define DEFAULT_WIN     0  // Base layer for Windows
 #define DEFAULT_MAC     1  // Base layer for Mac
 #define NUM_WIN         2  // Numbers and symbols for Windows
@@ -30,12 +31,14 @@
 // POINTING DEVICE CONFIGURATION
 // =============================================================================
 // Rotary encoder scroll value
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 // =============================================================================
 // MOUSE MOVEMENT CONFIGURATION
 // =============================================================================
 // Controls mouse cursor movement behavior
+
 &mmv {
     delay-ms = <20>;              // Initial delay before movement starts
     trigger-period-ms = <5>;       // Time between movement triggers
@@ -46,6 +49,7 @@
 // MOUSE SCROLL CONFIGURATION
 // =============================================================================
 // Controls mouse scroll wheel behavior
+
 &msc {
     delay-ms = <3>;               // Initial delay before scroll starts
     trigger-period-ms = <3>;      // Time between scroll triggers
@@ -56,6 +60,7 @@
 // GLOBAL BEHAVIOR CONFIGURATION
 // =============================================================================
 // Mod-tap behavior settings
+
 &mt {
     flavor = "balanced";
     tapping-term-ms = <180>;
@@ -64,6 +69,7 @@
 };
 
 // Layer-tap behavior settings
+
 &lt {
     flavor = "balanced";
     tapping-term-ms = <180>;
@@ -76,11 +82,12 @@
     // KEY COMBINATIONS (COMBOS)
     // =============================================================================
     // These define simultaneous key presses that trigger different actions
-    
+
     combos {
         compatible = "zmk,combos";
 
         // Navigation combos
+
         tab {
             bindings = <&kp TAB>;
             key-positions = <11 10>;
@@ -92,6 +99,7 @@
         };
 
         // Punctuation combos
+
         equals {
             bindings = <&kp EQUAL>;
             key-positions = <8 7>;
@@ -103,6 +111,7 @@
         };
 
         // Letter combos
+
         shift_z {
             bindings = <&kp LS(Z)>;
             key-positions = <22 23>;
@@ -123,9 +132,10 @@
     // MACROS
     // =============================================================================
     // Predefined sequences of actions
-    
+
     macros {
         // Layer navigation macro
+
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -134,13 +144,15 @@
         };
 
         // Bluetooth device management macros
+
         bt0_win: bt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1>,                    // Turn off Mac layer
-                <&macro_wait_time 200>,          // Wait 200ms
+                <&tog_off 1>,
+                <&macro_wait_time 200>,
                 <&bt BT_SEL 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>;
+
             label = "BT0_WIN";
         };
 
@@ -148,11 +160,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1>,                    // Turn off Mac layer
-                <&macro_wait_time 200>,          // Wait 200ms
+                <&tog_off 1>,
+                <&macro_wait_time 200>,
                 <&bt BT_SEL 1 &bt BT_DISC 0 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>,
-                <&macro_wait_time 500>,         // Wait 500ms for connection
-                <&tog_on 1>;                    // Turn on Mac layer
+                <&macro_wait_time 500>,
+                <&tog_on 1>;
+                    // Turn on Mac layer
             label = "BT1_MAC";
         };
 
@@ -160,11 +173,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1>,                    // Turn off Mac layer
-                <&macro_wait_time 200>,          // Wait 200ms
+                <&tog_off 1>,
+                <&macro_wait_time 200>,
                 <&bt BT_SEL 2 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 3 &bt BT_DISC 4>,
-                <&macro_wait_time 500>,         // Wait 500ms for connection
-                <&tog_on 1>;                    // Turn on Mac layer
+                <&macro_wait_time 500>,
+                <&tog_on 1>;
+                    // Turn on Mac layer
             label = "BT2_IPAD";
         };
 
@@ -172,27 +186,29 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1>,                    // Turn off Mac layer
-                <&macro_wait_time 200>,          // Wait 200ms
+                <&tog_off 1>,
+                <&macro_wait_time 200>,
                 <&bt BT_SEL 3 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 4>,
-                <&macro_wait_time 500>,         // Wait 500ms for connection
-                <&tog_on 1>;                    // Turn on Mac layer
+                <&macro_wait_time 500>,
+                <&tog_on 1>;
+                    // Turn on Mac layer
             label = "BT3_IPHONE";
         };
 
         // AML scroll layer macros (implementation by zaruSaru)
         // These macros allow entering scroll layer while AML is active
-        
+
         to_scroll_layer_win: to_scroll_layer_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&to FUNC_SCROLL_WIN>,          // Switch to scroll layer
-                <&macro_press>,                  // Press the key
-                <&mo FUNC_SCROLL_WIN>,           // Momentary layer activation
-                <&macro_pause_for_release>,     // Wait for release
-                <&macro_release>,               // Release the key
-                <&mo FUNC_SCROLL_WIN>;           // Momentary layer activation
+                <&to FUNC_SCROLL_WIN>,
+                <&macro_press>,
+                <&mo FUNC_SCROLL_WIN>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo FUNC_SCROLL_WIN>;
+           // Momentary layer activation
             label = "TO_SCROLL_LAYER_WIN";
         };
 
@@ -200,17 +216,18 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&to FUNC_SCROLL_MAC>,          // Switch to scroll layer
-                <&macro_press>,                  // Press the key
-                <&mo FUNC_SCROLL_MAC>,           // Momentary layer activation
-                <&macro_pause_for_release>,     // Wait for release
-                <&macro_release>,               // Release the key
-                <&mo FUNC_SCROLL_MAC>;           // Momentary layer activation
+                <&to FUNC_SCROLL_MAC>,
+                <&macro_press>,
+                <&mo FUNC_SCROLL_MAC>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo FUNC_SCROLL_MAC>;
+           // Momentary layer activation
             label = "TO_SCROLL_LAYER_MAC";
         };
 
         // AML exit macros - only exit AML on tap, not hold
-        
+
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -234,16 +251,17 @@
     // CUSTOM BEHAVIORS
     // =============================================================================
     // Advanced key behaviors and combinations
-    
+
     behaviors {
         // -------------------------------------------------------------------------
         // LAYER NAVIGATION BEHAVIORS
         // -------------------------------------------------------------------------
-        
+
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -252,11 +270,12 @@
         // AML (ADVANCED MOUSE LAYER) BEHAVIORS
         // -------------------------------------------------------------------------
         // These behaviors handle AML exit on tap only
-        
+
         mt_exit_AML_on_tap: mt_exit_AML_on_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_exit_AML_ON_TAP";
             bindings = <&kp>, <&kp_exit_AML>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
@@ -267,12 +286,13 @@
         // ROTARY ENCODER BEHAVIORS
         // -------------------------------------------------------------------------
         // Basic encoder behaviors for scroll control
-        
+
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
 
@@ -281,6 +301,7 @@
             label = "ENCODER_MSC_UP_DOWN";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
             tap-ms = <20>;
         };
 
@@ -295,7 +316,7 @@
         // LAYER TOGGLE BEHAVIORS
         // -------------------------------------------------------------------------
         // For connection-specific layer switching
-        
+
         tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -314,7 +335,7 @@
         // ADVANCED HOLD-TAP BEHAVIORS
         // -------------------------------------------------------------------------
         // Custom hold-tap behaviors with repeat functionality
-        
+
         sands: space_and_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "SPACE_AND_SHIFT";
@@ -352,7 +373,7 @@
         // SPECIALIZED LAYER BEHAVIORS
         // -------------------------------------------------------------------------
         // Fixed behaviors for specific layer combinations
-        
+
         space_sl2: space_sl2 {
             compatible = "zmk,behavior-hold-tap";
             label = "SPACE_STICKY_LAYER_2";
@@ -367,6 +388,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_3";
             bindings = <&mo>, <&to>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -375,6 +397,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_4";
             bindings = <&mo>, <&to>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -387,12 +410,13 @@
         // Shift: Horizontal navigation (Win+Left/Right)
         // Alt: Virtual desktop navigation (Win+Up/Down)
         // Ctrl: Window management (Win+Left/Right)
-        
         // Positive rotation (clockwise) behaviors
+
         shift_p: shift_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(LEFT)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
         };
@@ -401,6 +425,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&shift_p>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -408,6 +433,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(UP)>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -415,6 +441,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(LEFT)>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -422,6 +449,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&alt_p>, <&win_p>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -429,14 +457,17 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&shift_default_p>, <&alt_win_p>;
+
             mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
         };
 
         // Negative rotation (counter-clockwise) behaviors
+
         shift_n: shift_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(RIGHT)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
         };
@@ -445,6 +476,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&shift_n>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -452,6 +484,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(DOWN)>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -459,6 +492,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LG(RIGHT)>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -466,6 +500,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&alt_n>, <&win_n>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -473,14 +508,17 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&shift_default_n>, <&alt_win_n>;
+
             mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
         };
 
         // Combined encoder behavior for Windows
+
         mod_morph_encoder: mod_morph_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_n>, <&mod_morph_encoder_p>;
+
             tap-ms = <20>;
         };
 
@@ -493,12 +531,13 @@
         // Shift: Horizontal navigation
         // Alt: Mission Control navigation
         // Ctrl: Window management
-        
         // Positive rotation (clockwise) behaviors for Mac
+
         gui_p: gui_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DELETE>, <&kp LG(PLUS)>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -506,6 +545,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&gui_p>;
+
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -513,6 +553,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(RIGHT)))>;
+
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -520,6 +561,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(DOWN)))>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -527,6 +569,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ctrl_p>, <&opt_p>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -534,14 +577,17 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sftgui_default_p>, <&opt_ctrl_p>;
+
             mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
         };
 
         // Negative rotation (counter-clockwise) behaviors for Mac
+
         gui_n: gui_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp LG(MINUS)>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -549,6 +595,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&gui_n>;
+
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -556,6 +603,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(LEFT)))>;
+
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -563,6 +611,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(LG(UP)))>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -570,6 +619,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ctrl_n>, <&opt_n>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -577,14 +627,17 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sftgui_default_n>, <&opt_ctrl_n>;
+
             mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
         };
 
         // Combined encoder behavior for Mac
+
         mod_morph_encoder_mac: mod_morph_encoder_mac {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_mac_p>, <&mod_morph_encoder_mac_n>;
+
             tap-ms = <20>;
         };
 
@@ -592,16 +645,18 @@
         // TAP DANCE BEHAVIORS
         // -------------------------------------------------------------------------
         // Advanced tap dance behaviors for complex key combinations
-        
+
         td_LT6_Lang1_and_MO4: td_LT6_Lang1_and_MO4 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LT6_LANG1_AND_MO4";
             #binding-cells = <0>;
             bindings = <&lt FUNC_SCROLL_WIN LANGUAGE_1>, <&mo SYMBOL_WIN>;
+
             tapping-term-ms = <240>;
         };
 
         // Modifier tap dance behaviors with AML exit functionality
+
         td_mt_left_ctrl: td_mt_left_ctrl {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MT_LEFT_CTRL";
@@ -662,7 +717,7 @@
     // =============================================================================
     // This section defines all the keymap layers and their key bindings
     // Each layer serves a specific purpose and is optimized for different use cases
-    
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -671,11 +726,12 @@
         // -------------------------------------------------------------------------
         // Primary typing layer with Windows-specific shortcuts
         // Features: Mod-tap on home row, layer access via thumb keys
+
         DEFAULT_WIN {
             bindings = <
 &kp Q             &kp W         &kp E      &kp R                       &kp T                                                                     &kp Y                      &kp U  &lt FUNC_SCROLL_WIN I  &kp O    &kp P
 &mt LCTRL A       &mt LCTRL S   &kp D      &kp F                       &kp G              &kp LG(LS(S))                       &kp EQUAL          &kp H                      &kp J  &kp K                  &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                       &kp B              &kp AT                              &kp SEMI           &kp N                      &kp M  &kp COMMA              &kp DOT  &kp SLASH
+&mt LEFT_SHIFT Z  &kp X         &kp C      &kp V                       &kp B              &kp AT                              &kp LS(SEMI)       &kp N                      &kp M  &kp COMMA              &kp DOT  &kp SLASH
 &kp LALT          &kp LEFT_GUI  &kp LCTRL  &lt KBD_SETTING LC(ESCAPE)  &lt NUM_WIN SPACE  &lt_to_layer_0 SYMBOL_WIN CAPS      &lt NUM_WIN SPACE  &lt FUNC_SCROLL_WIN ENTER                                         &mt RIGHT_SHIFT DELETE
             >;
 
@@ -687,6 +743,7 @@
         // -------------------------------------------------------------------------
         // Primary typing layer with Mac-specific shortcuts
         // Features: Cmd instead of Ctrl, Mac-specific key combinations
+
         DEFAULT_MAC {
             bindings = <
 &kp Q             &kp W        &kp E         &kp R                   &kp T                                                          &kp Y                      &kp U  &lt FUNC_SCROLL_MAC I  &kp O    &kp P
@@ -703,12 +760,13 @@
         // -------------------------------------------------------------------------
         // Provides easy access to numbers, symbols, and Windows-specific shortcuts
         // Features: Numbers on top row, symbols on second row, navigation keys
+
         NUM_WIN {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                         &kp NUMBER_6  &kp NUMBER_7  &kp N8     &kp NUMBER_9  &kp NUMBER_0
-&kp EXCL      &kp AT        &kp POUND     &kp DLLR      &kp PRCNT  &trans      &trans  &kp CARET     &kp AMPS      &kp STAR   &kp LPAR      &kp RPAR
-&kp F11       &kp F12       &trans        &trans        &trans     &trans      &trans  &trans        &trans        &kp COLON  &kp DQT       &kp UP_ARROW
-&trans        &trans        &trans        &trans        &trans     &trans      &trans  &trans                                               &kp DOWN_ARROW
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                                    &kp NUMBER_6  &kp NUMBER_7  &kp N8     &kp NUMBER_9  &kp NUMBER_0
+&kp EXCL      &kp AT        &kp POUND     &kp DLLR      &kp PRCNT  &trans      &kp LEFT_BRACKET   &kp CARET     &kp AMPS      &kp STAR   &kp LPAR      &kp RPAR
+&kp F11       &kp F12       &trans        &trans        &trans     &trans      &kp RIGHT_BRACKET  &trans        &trans        &kp COLON  &kp DQT       &kp UP_ARROW
+&trans        &trans        &trans        &trans        &trans     &trans      &trans             &trans                                               &kp DOWN_ARROW
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
@@ -719,6 +777,7 @@
         // -------------------------------------------------------------------------
         // Mac-specific numbers and symbols with volume control
         // Features: Same layout as Windows but with Mac-specific encoder behavior
+
         NUM_MAC {
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                         &kp NUMBER_6  &kp NUMBER_7  &kp N8     &kp NUMBER_9  &kp NUMBER_0
@@ -735,6 +794,7 @@
         // -------------------------------------------------------------------------
         // Comprehensive symbol access with Windows-specific modifier combinations
         // Features: All common symbols, Windows modifier shortcuts
+
         SYMBOL_WIN {
             bindings = <
 &kp SQT      &kp DOUBLE_QUOTES  &kp EXCLAMATION   &kp QUESTION      &kp TILDE                                              &kp BACKSLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &kp PERCENT
@@ -751,6 +811,7 @@
         // -------------------------------------------------------------------------
         // Mac-specific symbols with volume control via encoder
         // Features: Same symbols as Windows but with Mac-specific encoder behavior
+
         SYMBOL_MAC {
             bindings = <
 &kp SQT      &kp DOUBLE_QUOTES  &kp EXCLAMATION  &kp QUESTION      &kp TILDE                                              &kp BACKSLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &kp PERCENT
@@ -767,9 +828,10 @@
         // -------------------------------------------------------------------------
         // Function keys, Windows shortcuts, and virtual desktop navigation
         // Features: F1-F12, Windows-specific shortcuts, virtual desktop controls
+
         FUNC_SCROLL_WIN {
             bindings = <
-&kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans         &kp LS(LG(S))
+&kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans         &mkp MB2
 &kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &kp ESCAPE         &kp LA(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LA(RIGHT)  &trans
 &kp F10  &kp LC(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &trans           &trans             &trans         &trans
 &trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
@@ -783,6 +845,7 @@
         // -------------------------------------------------------------------------
         // Mac-specific function keys and Mission Control navigation
         // Features: F1-F12, Mac-specific shortcuts, Mission Control, zoom controls
+
         FUNC_SCROLL_MAC {
             bindings = <
 &kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LG(PAGE_UP)  &kp LG(PAGE_DOWN)  &none          &kp LS(LG(NUMBER_4))
@@ -799,6 +862,7 @@
         // -------------------------------------------------------------------------
         // Provides mouse functionality with left, right, and middle mouse buttons
         // Features: Mouse buttons (MB1, MB2, MB3) for precise cursor control
+
         AML {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
@@ -813,6 +877,7 @@
         // -------------------------------------------------------------------------
         // System controls, Bluetooth device switching, and keyboard settings
         // Features: Brightness, volume, Bluetooth device selection, bootloader access
+
         KBD_SETTING {
             bindings = <
 &trans          &trans  &trans  &trans  &trans                                &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
@@ -827,6 +892,7 @@
         // -------------------------------------------------------------------------
         // Alternative mouse layer with same functionality as AML
         // Features: Identical to AML layer for redundancy
+
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
