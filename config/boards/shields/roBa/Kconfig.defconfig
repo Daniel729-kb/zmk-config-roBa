@@ -20,8 +20,3 @@ config ZMK_SPLIT
     default y
 
 endif
-    help
-      When enabled, the advertisement interval will switch between active and idle values
-      based on activity.
-
-endmenu
