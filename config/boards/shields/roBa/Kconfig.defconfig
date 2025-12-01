@@ -20,3 +20,11 @@ config ZMK_SPLIT
     default y
 
 endif
+
+config ZMK_STATUS_ADV_ACTIVE_INTERVAL_MS
+    int "Status advertising active interval (ms)"
+    default 100
+
+config ZMK_STATUS_ADV_IDLE_INTERVAL_MS
+    int "Status advertising idle interval (ms)"
+    default 30000
