@@ -20,28 +20,6 @@ config ZMK_SPLIT
     default y
 
 endif
-
-config ZMK_STATUS_ADV_ACTIVE_INTERVAL_MS
-    int "Status advertising active interval (ms)"
-    default 100
-
-config ZMK_STATUS_ADV_IDLE_INTERVAL_MS
-    int "Status advertising idle interval (ms)"
-    default 30000
-
-menu "roBa: status advertisement options"
-
-config ZMK_STATUS_ADV_KEYBOARD_NAME
-    string "Status advertisement keyboard name"
-    depends on ZMK_STATUS_ADVERTISEMENT
-    default "roBaish-o"
-    help
-      The keyboard name advertised by the status service.
-
-config ZMK_STATUS_ADV_ACTIVITY_BASED
-    bool "Enable activity-based status advertisement intervals"
-    depends on ZMK_STATUS_ADVERTISEMENT
-    default y
     help
       When enabled, the advertisement interval will switch between active and idle values
       based on activity.
