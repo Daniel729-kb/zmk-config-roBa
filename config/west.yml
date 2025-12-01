@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/yamaryu211
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: prospector
+      url-base: https://github.com/prospector
   projects:
     - name: zmk
       remote: zmkfirmware
